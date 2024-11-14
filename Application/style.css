@@ -1,0 +1,31 @@
+
+.resume-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff5733; /* Custom background color (e.g., orange) */
+    color: white; /* Custom text color */
+    border: none; /* Optional: remove border */
+}
+
+.resume-button:hover {
+    background-color: #c84e1d; /* Darker color for hover effect */
+}
+
+.under{
+    position: relative; /* Set up a positioning context for the pseudo-element */
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.under::after {
+    content: '';
+    position: absolute;
+    bottom: 5px; 
+    left: 40rem;  
+    width: 63rem; 
+    height: 3px;  
+    background-color: #DA8359;  
+    transform: translateX(-50%); 
+    margin-bottom: 1rem;
+}
