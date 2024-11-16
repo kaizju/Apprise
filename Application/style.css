@@ -1,4 +1,10 @@
-
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+  }
 .blog-posts {
     background-image: url("https://img.freepik.com/free-photo/desk-concept-with-coffee-blue-background-with-copyspace_24972-272.jpg?t=st=1731761277~exp=1731764877~hmac=bba6dfe3f90061300f8973487bc68cfcb06f46f28cd367c806ad88e0500670c6&w=740");
     background-size: cover;
@@ -394,4 +400,45 @@ margin-top: 40rem;
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
+  }
+  .why-choose-us {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+
+  .left-section img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+  }
+
+  .title h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .title p {
+    color: #555;
+    margin-bottom: 2rem;
+  }
+
+  .card {
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-weight: bold;
+  }
+
+  .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0066cc;
   }
