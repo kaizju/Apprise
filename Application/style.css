@@ -1,4 +1,66 @@
 
+.blog-posts {
+    background-image: url("https://img.freepik.com/free-photo/desk-concept-with-coffee-blue-background-with-copyspace_24972-272.jpg?t=st=1731761277~exp=1731764877~hmac=bba6dfe3f90061300f8973487bc68cfcb06f46f28cd367c806ad88e0500670c6&w=740");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Overlay to darken the background */
+.blog-posts::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 1; /* Make sure overlay is above the background image */
+}
+
+/* Make the content stand out by pushing it above the overlay */
+.blog-posts .container {
+    z-index: 2; /* Ensure content is above overlay */
+}
+
+/* Styling the buttons for better visibility */
+.btn-primary.skill {
+    background-color: #007bff; /* Custom color */
+    color: white;
+    border: none;
+}
+
+.btn-primary.skill:hover {
+    background-color: #0056b3; /* Darker color on hover */
+    color: white;
+}
+
+/* Additional styling for search bar */
+.input-group {
+    z-index: 2; /* Ensure search bar is above the overlay */
+}
+.blog-posts h1 {
+    font-size: 7rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding a slight shadow for readability */
+}
+.skill {
+    background-color: #FF5733; /* Default background color */
+    color: black; /* Ensures text color remains black */
+}
+
+.skill:hover {
+    background-color: #333333; /* Darker color on hover */
+}
 .resume-button {
     position: absolute;
     top: 10px;
@@ -152,3 +214,184 @@ margin-top: 40rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     font-size: 14px;
 }
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .title p {
+    color: #555;
+    font-size: 1rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .service-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .service-card-content {
+    padding: 1rem;
+  }
+
+  .service-card-content h3 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tags span {
+    font-size: 0.8rem;
+    background-color: #eee;
+    border-radius: 16px;
+    padding: 0.3rem 0.8rem;
+    color: #333;
+  }
+
+  .arrow {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: black;
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .arrow:hover {
+    background-color: #444;
+  }
+
+  /* Navigation Arrows */
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+  }
+
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .nav-button:hover {
+    background-color: #444;
+  }
+  .section {
+    max-width: 1100px;
+    margin: 2rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #e6eef0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-container {
+    position: relative;
+    flex: 1;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .play-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  .play-button::after {
+    content: '▶';
+    font-size: 1.5rem;
+    color: #000;
+  }
+
+  .content-container {
+    flex: 1.5;
+    padding: 2rem;
+    background: #d8e6e8;
+    border-radius: 0 16px 16px 0;
+  }
+
+  .content-container .tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background: #ffffff;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+  }
+
+  .content-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #000;
+  }
+
+  .content-container p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }

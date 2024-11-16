@@ -12,69 +12,160 @@
     <link rel="stylesheet" href="style.css">
     <title>Apprise</title>
 </head>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="margin-left: 1rem;">
-            <img src="https://cdn-icons-png.flaticon.com/512/3935/3935328.png" alt="Logo" style="width: 3rem;"
-                class="d-inline-block align-text-top">
-            Apprise
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="margin-left: 1rem;">
+                <img src="https://cdn-icons-png.flaticon.com/512/3935/3935328.png" alt="Apprise Logo" style="width: 3rem;" class="d-inline-block align-text-top">
+                Apprise
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <a href="#" class="btn btn-primary resume-button" style="border-color:black;color:black;background-color:white;margin-top: 0.5rem;margin-right: 1rem;">Make a Resume</a>
+    </nav>
+
+    <div class="blog-posts">
+        <div class="container my-5">
+            <!-- Title Above Search Bar -->
+            <h1>Welcome to Apprise</h1> <!-- Added the title here -->
+        <div class="container my-5">
+            <div class="input-group mb-4" style="width: 500px; margin: 0 auto;">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <button type="button" class="btn btn-outline-primary">Search</button>
+            </div>
+
+            <section class="skills-container text-center mb-5">
+                <div style="font-weight: bold; margin-top: 1rem;">Popular Skills:</div>
+                <a href="#" class="btn btn-primary skill" style="color:black;">Web Design</a>
+                <a href="#" class="btn btn-primary skill mx-2" style="color:black;">UI/UX Design</a>
+                <a href="#" class="btn btn-primary skill mx-2" style="color:black;">Databases</a>
+                <a href="#" class="btn btn-primary skill mx-2" style="color:black;">Business Cards</a>
+            </section>
         </div>
     </div>
-    <a style="border-color:black;color:black;background-color:white;margin-top: 0.5rem;margin-right: 1rem;" href="#"
-        class="btn btn-primary resume-button">Make a Resume</a>
-</nav>
-<body>
-    <div class="input-group" style="margin: 20px auto; width: 500px;">
-        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-        <button type="button" class="btn btn-outline-primary" data-mdb-ripple-init>search</button>
+</div>
+<div class="container">
+    <div class="title">
+      <h1>Popular Services</h1>
+      <p>Freelancing offers a diverse range of popular services, from web development to content writing, catering to various clients' needs.</p>
     </div>
-    <div class="skills-container" style="display: flex; flex-wrap: wrap; justify-content: center; margin-top: 20px;">
-        <div style="font-weight: bold; margin-bottom: 10px; margin-top: 1rem;">Popular Skills: </div>
-        <div class="btn btn-primary skill" style="margin: 5px; color:black">Web Design</div>
-        <div class="btn btn-primary skill" style="margin: 5px;color:black">UI/UX Design</div>
-        <div class="btn btn-primary skill" style="margin: 5px;color:black">Databases</div>
-        <div class="btn btn-primary skill" style="margin: 5px;color:black">Business Cards</div>
+    <div class="services-grid">
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-title">Card title</h3>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <div class="tags">
+                <span>Game Design</span>
+                <span>Environment Artist</span>
+                <span>AI Artist</span>
+                <span>Archviz Artist</span>
+              </div>
+              <a style="margin-top: 2rem;" href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="services-grid">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h3 class="card-title">Card title</h3>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="tags">
+                    <span>Game Design</span>
+                    <span>Environment Artist</span>
+                    <span>AI Artist</span>
+                    <span>Archviz Artist</span>
+                  </div>
+                  <a style="margin-top: 2rem;" href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              
+        </div>
+        <div class="services-grid">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h3 class="card-title">Card title</h3>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="tags">
+                    <span>Game Design</span>
+                    <span>Environment Artist</span>
+                    <span>AI Artist</span>
+                    <span>Archviz Artist</span>
+                  </div>
+                  <a style="margin-top: 2rem;" href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              
+        </div>
+        <div class="services-grid">
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h3 class="card-title">Card title</h3>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <div class="tags">
+                    <span>Game Design</span>
+                    <span>Environment Artist</span>
+                    <span>AI Artist</span>
+                    <span>Archviz Artist</span>
+                  </div>
+                  <a style="margin-top: 2rem;" href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              
+        </div>
     </div>
-    <footer>
+    </div>
+    <div class="section">
+        <!-- Image Section -->
+        <div class="image-container">
+          <img src="https://via.placeholder.com/600x400" alt="Man working on a laptop">
+          <div class="play-button"></div>
+        </div>
+        <!-- Content Section -->
+        <div class="content-container">
+          <span class="tag">For Talent</span>
+          <h1>Find Outstanding Workmanship.</h1>
+          <p>
+            The outstanding workmanship displayed in the intricate craftsmanship of the hand-carved wooden furniture, meticulously detailed with ornate patterns and flawless finishes, is a testament to the artisan's exceptional skill and dedication to their craft.
+          </p>
+        </div>
+      </div>
+    <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <img style="width: 3rem; margin-bottom: 1rem;" src="../Application/001-arrow-up.png" alt="Logo">Apprise
-                    <p>A freelance service website connecting businesses with freelancers, making project collaboration
-                        more efficient.</p>
-                    <ul class="social-media">
+                    <img style="width: 3rem; margin-bottom: 1rem;" src="../Application/001-arrow-up.png" alt="Apprise Logo">
+                    <p>A freelance service website connecting businesses with freelancers, making project collaboration more efficient.</p>
+                    <ul class="social-media list-unstyled">
                         <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                         <li><a href="#"><i class="fab fa-twitter"></i></a></li>
                         <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
@@ -83,7 +174,7 @@
                 </div>
                 <div class="col-md-3">
                     <h4>Product</h4>
-                    <ul>
+                    <ul class="list-unstyled">
                         <li><a style="color: white;" href="#">About</a></li>
                         <li><a style="color: white;" href="#">Team</a></li>
                         <li><a style="color: white;" href="#">Careers</a></li>
@@ -91,7 +182,7 @@
                 </div>
                 <div class="col-md-3">
                     <h4>Support</h4>
-                    <ul>
+                    <ul class="list-unstyled">
                         <li><a style="color: white;" href="#">How It Works</a></li>
                         <li><a style="color: white;" href="#">Trust & Safety</a></li>
                         <li><a style="color: white;" href="#">Help Centre</a></li>
@@ -99,20 +190,18 @@
                 </div>
                 <div class="col-md-3">
                     <h4>Resources</h4>
-                    <ul>
+                    <ul class="list-unstyled">
                         <li><a style="color: white;" href="#">Customer Stories</a></li>
                         <li><a style="color: white;" href="#">Cost Calculator</a></li>
                         <li><a style="color: white;" href="#">Startup Cities</a></li>
                     </ul>
                 </div>
             </div>
-
-            <!-- Footer Bottom Section with Flexbox for alignment -->
-            <div class="footer-bottom">
+            <div class="footer-bottom d-flex justify-content-between align-items-center">
                 <div class="copyright">
                     <p>&copy; 2023 Connect Pvt. Ltd.</p>
                 </div>
-                <ul class="footer-links">
+                <ul class="footer-links list-unstyled d-flex mb-0">
                     <li><a style="color: white;" href="#">Terms</a></li>
                     <li><a style="color: white;" href="#">Privacy</a></li>
                     <li><a style="color: white;" href="#">Sitemap</a></li>
@@ -120,6 +209,7 @@
             </div>
         </div>
     </footer>
+
 </body>
 
 </html>
