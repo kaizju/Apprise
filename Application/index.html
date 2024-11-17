@@ -18,6 +18,7 @@
       src="https://kit.fontawesome.com/f3e6dcfef4.js"
       crossorigin="anonymous"
     ></script>
+    <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Poppins">  
     <link rel="stylesheet" href="style.css" />
     <title>Apprise</title>
     
@@ -84,17 +85,19 @@
 
         <div class="container my-5">
           <div class="input-group mb-4" style="width: 500px; margin: 0 auto">
-            <form onsubmit="return redirectToSearch(event)">
+            <form class="d-flex" style="width: 100%;" onsubmit="return redirectToSearch(event)">
               <input
-                  type="text"
-                  id="search"
-                  class="search-box"
-                  placeholder="Type to search..."
-                  oninput="showSuggestions()"
-                  required
+                type="text"
+                id="search"
+                class="form-control search-box"
+                placeholder="Type to search..."
+                oninput="showSuggestions()"
+                required
               />
-              <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-          </form>
+              <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
           <div class="suggestions" id="suggestions">
               <!-- Suggestions will appear here -->
           </div>
@@ -354,7 +357,7 @@
         </div>
       </div>
     </div>
-    <footer class="bg-dark text-white py-4">
+    <footer style=" font-family: Poppins;" class="bg-dark text-white py-4">
       <div class="container">
         <div class="row">
           <div class="col-md-3">
@@ -383,24 +386,36 @@
             </ul>
           </div>
           <div class="col-md-3">
-            <h4>Product</h4>
-            <ul class="list-unstyled">
+            <h4 style="font-family: Poppins, sans-serif;
+            font-weight: 900;
+            ">Product</h4>
+            <ul style=" font-family: Poppins, sans-serif;
+            
+           " class="list-unstyled">
               <li><a style="color: white" href="#">About</a></li>
               <li><a style="color: white" href="#">Team</a></li>
               <li><a style="color: white" href="#">Careers</a></li>
             </ul>
           </div>
           <div class="col-md-3">
-            <h4>Support</h4>
-            <ul class="list-unstyled">
+            <h4 style="font-family: Poppins, sans-serif;
+            font-weight: 900;
+            ">Support</h4>
+            <ul style=" font-family: Poppins, sans-serif;
+            font-weight: 100;
+           " class="list-unstyled">
               <li><a style="color: white" href="#">How It Works</a></li>
               <li><a style="color: white" href="#">Trust & Safety</a></li>
               <li><a style="color: white" href="#">Help Centre</a></li>
             </ul>
           </div>
           <div class="col-md-3">
-            <h4>Resources</h4>
-            <ul class="list-unstyled">
+            <h4 style="font-family: Poppins, sans-serif;
+            font-weight: 900;
+            ">Resources</h4>
+            <ul style=" font-family: Poppins, sans-serif;
+            font-weight: 50;
+            font-style: normal;"class="list-unstyled">
               <li><a style="color: white" href="#">Customer Stories</a></li>
               <li><a style="color: white" href="#">Cost Calculator</a></li>
               <li><a style="color: white" href="#">Startup Cities</a></li>
@@ -414,7 +429,7 @@
             <p>&copy; 2023 Connect Pvt. Ltd.</p>
           </div>
           <ul class="footer-links list-unstyled d-flex mb-0">
-            <li><a style="color: white" href="#">Terms</a></li>
+            <li><a style="color: white" href="">Terms</a></li>
             <li><a style="color: white" href="#">Privacy</a></li>
             <li><a style="color: white" href="#">Sitemap</a></li>
           </ul>
@@ -429,9 +444,27 @@
             event.preventDefault();
             const query = document.getElementById("search").value.trim();
             if (query) {
-                window.location.href = `./Jobs/job.html?query=${encodeURIComponent(query)}`;
-            }
+              if (query.includes("job")) {             
+            window.location.href = `./Jobs/job.html?query=${encodeURIComponent(query)}`;
+        } else if (query.includes("carpenter")) {
+            
+            window.location.href = `./avail/carp.html?query=${encodeURIComponent(query)}`;
+        } else if (query.includes("electrical maintenance")) {
+            
+            window.location.href = `./avail/elec.html?query=${encodeURIComponent(query)}`;
+        } else if (query.includes("lechonero")) {
+            
+            window.location.href = `./avail/lechon.html?query=${encodeURIComponent(query)}`;
+        } else if (query.includes("water refilling")) {
+            
+            window.location.href = `./avail/water.html?query=${encodeURIComponent(query)}`;
+        } else if (query.includes("tubero")) {
+            
+            window.location.href = `./avail/plumber.html?query=${encodeURIComponent(query)}`;
         }
+
+      }
+    }
 
         function showSuggestions() {
             const input = document.getElementById("search").value.toLowerCase();
