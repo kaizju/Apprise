@@ -1,261 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/f3e6dcfef4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Apprise</title>
-</head>
+  </head>
+  <style>
+    
+    form {
+      width: 75vmin;
+      height: 100%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      padding: 40px 0;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 15px 10px;
+      border: none;
+      border-bottom: 1px solid #645979;
+      outline: none;
+      border-radius: 5px 5px 0 0;
+      background-color: #ffffff;
+      font-size: 16px;
+    }
+    ul {
+      list-style: none;
+    }
+    .list {
+      width: 100%;
+      background-color: #ffffff;
+      border-radius: 0 0 5px 5px;
+    }
+    .list-items {
+      padding: 10px 5px;
+    }
+    .list-items:hover {
+      background-color: #dddddd;
+    }
+  </style>
 
-<body>
+  <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="margin-left: 1rem;">
-                <img src="https://cdn-icons-png.flaticon.com/512/3935/3935328.png" alt="Apprise Logo" style="width: 3rem;" class="d-inline-block align-text-top">
-                Apprise
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="margin-left: 1rem">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3935/3935328.png"
+            alt="Apprise Logo"
+            style="width: 3rem"
+            class="d-inline-block align-text-top"
+          />
+          Apprise
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
         </div>
-        <a href="#" class="btn btn-primary resume-button" style="border-color:black;color:black;background-color:white;margin-top: 0.5rem;margin-right: 1rem;">Make a Resume</a>
+      </div>
+      <a
+        href="#"
+        class="btn btn-primary resume-button"
+        style="
+          border-color: black;
+          color: black;
+          background-color: white;
+          margin-top: 0.5rem;
+          margin-right: 1rem;
+        "
+        >Make a Resume</a
+      >
     </nav>
 
     <div class="blog-posts">
-        <div class="container my-5">
-            <!-- Title Above Search Bar -->
-            <h1>Welcome to Apprise</h1> <!-- Added the title here -->
-        <div class="container my-5">
-            <div class="input-group mb-4" style="width: 500px; margin: 0 auto;">
-                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                <button type="button" class="btn btn-outline-primary">Search</button>
-            </div>
+      <div class="container my-5">
+        <!-- Title Above Search Bar -->
+        <h1>Welcome to Apprise</h1>
+        <!-- Added the title here -->
 
-            <section class="skills-container text-center mb-5">
-                <div style="font-weight: bold; margin-top: 1rem;">Popular Skills:</div>
-                <a href="#" class="btn btn-primary skill" style="color:black;">Web Design</a>
-                <a href="#" class="btn btn-primary skill mx-2" style="color:black;">UI/UX Design</a>
-                <a href="#" class="btn btn-primary skill mx-2" style="color:black;">Databases</a>
-                <a href="#" class="btn btn-primary skill mx-2" style="color:black;">Business Cards</a>
-            </section>
+        <div class="container my-5">
+          <div class="input-group mb-4" style="width: 500px; margin: 0 auto">
+            <input
+              autocomplete="off"
+              id="input"
+              type="search"
+              class="form-control rounded"
+              placeholder="Search"
+              aria-label="Search"
+              aria-describedby="search-addon"
+            />
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+          <ul style="color:black"class="list"></ul>
+
+          <section class="skills-container text-center mb-5">
+            <div style="font-weight: bold; margin-top: 1rem">
+              Popular Skills:
+            </div>
+            <a href="#" class="btn btn-primary skill" style="color: black"
+              >Web Design</a
+            >
+            <a href="#" class="btn btn-primary skill mx-2" style="color: black"
+              >UI/UX Design</a
+            >
+            <a href="#" class="btn btn-primary skill mx-2" style="color: black"
+              >Databases</a
+            >
+            <a href="#" class="btn btn-primary skill mx-2" style="color: black"
+              >Business Cards</a
+            >
+          </section>
         </div>
+      </div>
     </div>
-</div>
-<div class="container">
-    <div class="title">
-      <h1>Popular Services</h1>
-      <p>Freelancing offers a diverse range of popular services, from web development to content writing, catering to various clients' needs.</p>
-    </div>
-    <div class="services-grid">
-        <div class="card" style="width: 18rem;">
-            <img src="https://grainger-prod.adobecqms.net/content/dam/grainger/gus/en/public/digital-tactics/know-how/hero/kh-qualified-vs-unqualified-electrical-workers_feat.jpg" class="card-img-top" alt="...">
+    <div class="container">
+      <div class="title">
+        <h1>Popular Services</h1>
+        <p>
+          Freelancing offers a diverse range of popular services, from web
+          development to content writing, catering to various clients' needs.
+        </p>
+      </div>
+      <div class="services-grid">
+        <div class="card" style="width: 18rem">
+          <img
+            src="https://grainger-prod.adobecqms.net/content/dam/grainger/gus/en/public/digital-tactics/know-how/hero/kh-qualified-vs-unqualified-electrical-workers_feat.jpg"
+            class="card-img-top"
+            alt="..."
+          />
+          <div class="card-body">
+            <h3 class="card-title">Card title</h3>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <div class="tags">
+              <span>Game Design</span>
+              <span>Environment Artist</span>
+              <span>AI Artist</span>
+              <span>Archviz Artist</span>
+            </div>
+            <a style="margin-top: 2rem" href="#" class="btn btn-primary"
+              >Go somewhere</a
+            >
+          </div>
+        </div>
+        <div class="services-grid">
+          <div class="card" style="width: 20rem">
+            <img
+              src="https://www.laborfinders.com/media/xvwnamq4/testfile.jpg?width=738&height=440&v=1d90dbace201ef0&format=webp&quality=80"
+              class="card-img-top"
+              alt="..."
+            />
             <div class="card-body">
               <h3 class="card-title">Card title</h3>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
               <div class="tags">
                 <span>Game Design</span>
                 <span>Environment Artist</span>
                 <span>AI Artist</span>
                 <span>Archviz Artist</span>
               </div>
-              <a style="margin-top: 2rem;" href="#" class="btn btn-primary">Go somewhere</a>
+              <a style="margin-top: 2rem" href="#" class="btn btn-primary"
+                >Go somewhere</a
+              >
             </div>
           </div>
-          <div class="services-grid">
-            <div class="card" style="width: 20rem;">
-                <img src="https://www.laborfinders.com/media/xvwnamq4/testfile.jpg?width=738&height=440&v=1d90dbace201ef0&format=webp&quality=80" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h3 class="card-title">Card title</h3>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <div class="tags">
-                    <span>Game Design</span>
-                    <span>Environment Artist</span>
-                    <span>AI Artist</span>
-                    <span>Archviz Artist</span>
-                  </div>
-                  <a style="margin-top: 2rem;" href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              
         </div>
         <div class="services-grid">
-            <div class="card" style="width: 20rem;">
-                <img src=https://img.freepik.com/premium-photo/man-worker-protective-mask-his-face-working-drink-water-factory-checking-blue-water-gallons_51137-5512.jpg?w=740" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h3 class="card-title">Card title</h3>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <div class="tags">
-                    <span>Game Design</span>
-                    <span>Environment Artist</span>
-                    <span>AI Artist</span>
-                    <span>Archviz Artist</span>
-                  </div>
-                  <a style="margin-top: 2rem;" href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
+          <div class="card" style="width: 20rem">
+            <img
+            src=https://img.freepik.com/premium-photo/man-worker-protective-mask-his-face-working-drink-water-factory-checking-blue-water-gallons_51137-5512.jpg?w=740"
+            class="card-img-top" alt="...">
+            <div class="card-body">
+              <h3 class="card-title">Card title</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <div class="tags">
+                <span>Game Design</span>
+                <span>Environment Artist</span>
+                <span>AI Artist</span>
+                <span>Archviz Artist</span>
               </div>
-              
+              <a style="margin-top: 2rem" href="#" class="btn btn-primary"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
         </div>
         <div class="services-grid">
-            <div class="card" style="width: 18rem;">
-                <img src="https://img.freepik.com/free-photo/delivery-concept-portrait-happy-african-american-delivery-man-red-cloth-holding-box-package-isolated-grey-studio-background-copy-space_1258-1212.jpg?t=st=1731764834~exp=1731768434~hmac=1e8934e841f743952126b78a3c242e3db8fa0ed9dcfb4b09273fb411df8f5274&w=740" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h3 class="card-title">Card title</h3>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <div class="tags">
-                    <span>Game Design</span>
-                    <span>Environment Artist</span>
-                    <span>AI Artist</span>
-                    <span>Archviz Artist</span>
-                  </div>
-                  <a style="margin-top: 2rem;" href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
+          <div class="card" style="width: 18rem">
+            <img
+              src="https://img.freepik.com/free-photo/delivery-concept-portrait-happy-african-american-delivery-man-red-cloth-holding-box-package-isolated-grey-studio-background-copy-space_1258-1212.jpg?t=st=1731764834~exp=1731768434~hmac=1e8934e841f743952126b78a3c242e3db8fa0ed9dcfb4b09273fb411df8f5274&w=740"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h3 class="card-title">Card title</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <div class="tags">
+                <span>Game Design</span>
+                <span>Environment Artist</span>
+                <span>AI Artist</span>
+                <span>Archviz Artist</span>
               </div>
-              
+              <a style="margin-top: 2rem" href="#" class="btn btn-primary"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
     </div>
     <div class="section">
-        <!-- Image Section -->
-    
-        <!-- Content Section -->
-        <div class="content-container">
-          <span class="tag">For Talent</span>
-          <h1>Find Outstanding Workmanship.</h1>
-          <p>
-            The outstanding workmanship displayed in the intricate craftsmanship of the hand-carved wooden furniture, meticulously detailed with ornate patterns and flawless finishes, is a testament to the artisan's exceptional skill and dedication to their craft.
-          </p>
-        </div>
+      <!-- Image Section -->
+
+      <!-- Content Section -->
+      <div class="content-container">
+        <span class="tag">For Talent</span>
+        <h1>Find Outstanding Workmanship.</h1>
+        <p>
+          The outstanding workmanship displayed in the intricate craftsmanship
+          of the hand-carved wooden furniture, meticulously detailed with ornate
+          patterns and flawless finishes, is a testament to the artisan's
+          exceptional skill and dedication to their craft.
+        </p>
       </div>
-      <div class="container why-choose-us">
-        <div class="row align-items-center">
-          <!-- Left Section: Image -->
-          <div class="col-md-6 text-center left-section">
-            <img src="https://via.placeholder.com/400x400" alt="Man with Laptop">
+    </div>
+    <div class="container why-choose-us">
+      <div class="row align-items-center">
+        <!-- Left Section: Image -->
+        <div class="col-md-6 text-center left-section">
+          <img
+            src="https://via.placeholder.com/400x400"
+            alt="Man with Laptop"
+          />
+        </div>
+
+        <!-- Right Section: Information Cards -->
+        <div class="col-md-6">
+          <div class="title">
+            <h1>Why Choose Us?</h1>
+            <p>
+              Choose us for unmatched quality, exceptional service, and a
+              commitment to exceeding your expectations every time.
+            </p>
           </div>
-    
-          <!-- Right Section: Information Cards -->
-          <div class="col-md-6">
-            <div class="title">
-              <h1>Why Choose Us?</h1>
-              <p>Choose us for unmatched quality, exceptional service, and a commitment to exceeding your expectations every time.</p>
-            </div>
-    
-            <!-- Card 1 -->
-            <div class="card mb-4">
-              <div class="card-body">
-                <div class="icon text-center">🔗</div>
-                <h5 class="card-title">Seamless Collaboration</h5>
-                <p class="card-text">
-                  Our user-friendly platform ensures a seamless collaboration experience. Communicate with freelancers, share files, and track project progress effortlessly.
-                </p>
-              </div>
-            </div>
-    
-            <!-- Card 2 -->
-            <div class="card mb-4">
-              <div class="card-body">
-                <div class="icon text-center">🤝</div>
-                <h5 class="card-title">Support and Community</h5>
-                <p class="card-text">
-                  Join a vibrant community of freelancers and clients who are passionate about their work. Our support team is available to assist you whenever you need help or have questions.
-                </p>
-              </div>
-            </div>
-    
-            <!-- Card 3 -->
-            <div class="card mb-4">
-              <div class="card-body">
-                <div class="icon text-center">🔒</div>
-                <h5 class="card-title">Secure and Reliable</h5>
-                <p class="card-text">
-                  Your safety and security are our top priorities. We implement robust measures to protect your data and financial transactions.
-                </p>
-              </div>
+
+          <!-- Card 1 -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="icon text-center">🔗</div>
+              <h5 class="card-title">Seamless Collaboration</h5>
+              <p class="card-text">
+                Our user-friendly platform ensures a seamless collaboration
+                experience. Communicate with freelancers, share files, and track
+                project progress effortlessly.
+              </p>
             </div>
           </div>
+
+          <!-- Card 2 -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="icon text-center">🤝</div>
+              <h5 class="card-title">Support and Community</h5>
+              <p class="card-text">
+                Join a vibrant community of freelancers and clients who are
+                passionate about their work. Our support team is available to
+                assist you whenever you need help or have questions.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="icon text-center">🔒</div>
+              <h5 class="card-title">Secure and Reliable</h5>
+              <p class="card-text">
+                Your safety and security are our top priorities. We implement
+                robust measures to protect your data and financial transactions.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
     <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <img style="width: 3rem; margin-bottom: 1rem;" src="../Application/001-arrow-up.png" alt="Apprise Logo">
-                    <p>A freelance service website connecting businesses with freelancers, making project collaboration more efficient.</p>
-                    <ul class="social-media list-unstyled">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h4>Product</h4>
-                    <ul class="list-unstyled">
-                        <li><a style="color: white;" href="#">About</a></li>
-                        <li><a style="color: white;" href="#">Team</a></li>
-                        <li><a style="color: white;" href="#">Careers</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h4>Support</h4>
-                    <ul class="list-unstyled">
-                        <li><a style="color: white;" href="#">How It Works</a></li>
-                        <li><a style="color: white;" href="#">Trust & Safety</a></li>
-                        <li><a style="color: white;" href="#">Help Centre</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h4>Resources</h4>
-                    <ul class="list-unstyled">
-                        <li><a style="color: white;" href="#">Customer Stories</a></li>
-                        <li><a style="color: white;" href="#">Cost Calculator</a></li>
-                        <li><a style="color: white;" href="#">Startup Cities</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom d-flex justify-content-between align-items-center">
-                <div class="copyright">
-                    <p>&copy; 2023 Connect Pvt. Ltd.</p>
-                </div>
-                <ul class="footer-links list-unstyled d-flex mb-0">
-                    <li><a style="color: white;" href="#">Terms</a></li>
-                    <li><a style="color: white;" href="#">Privacy</a></li>
-                    <li><a style="color: white;" href="#">Sitemap</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <img
+              style="width: 3rem; margin-bottom: 1rem"
+              src="../Application/001-arrow-up.png"
+              alt="Apprise Logo"
+            />
+            <p>
+              A freelance service website connecting businesses with
+              freelancers, making project collaboration more efficient.
+            </p>
+            <ul class="social-media list-unstyled">
+              <li>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h4>Product</h4>
+            <ul class="list-unstyled">
+              <li><a style="color: white" href="#">About</a></li>
+              <li><a style="color: white" href="#">Team</a></li>
+              <li><a style="color: white" href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h4>Support</h4>
+            <ul class="list-unstyled">
+              <li><a style="color: white" href="#">How It Works</a></li>
+              <li><a style="color: white" href="#">Trust & Safety</a></li>
+              <li><a style="color: white" href="#">Help Centre</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h4>Resources</h4>
+            <ul class="list-unstyled">
+              <li><a style="color: white" href="#">Customer Stories</a></li>
+              <li><a style="color: white" href="#">Cost Calculator</a></li>
+              <li><a style="color: white" href="#">Startup Cities</a></li>
+            </ul>
+          </div>
         </div>
+        <div
+          class="footer-bottom d-flex justify-content-between align-items-center"
+        >
+          <div class="copyright">
+            <p>&copy; 2023 Connect Pvt. Ltd.</p>
+          </div>
+          <ul class="footer-links list-unstyled d-flex mb-0">
+            <li><a style="color: white" href="#">Terms</a></li>
+            <li><a style="color: white" href="#">Privacy</a></li>
+            <li><a style="color: white" href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
     </footer>
+  </body>
+  <script>
+    let names = [
+      "Ayla",
+      "Jake",
+      "Sean",
+      "Henry",
+      "Brad",
+      "Stephen",
+      "Taylor",
+      "Timmy",
+      "Cathy",
+      "John",
+      "Amanda",
+      "Amara",
+      "Sam",
+      "Sandy",
+      "Danny",
+      "Ellen",
+      "Camille",
+      "Chloe",
+      "Emily",
+      "Nadia",
+      "Mitchell",
+      "Harvey",
+      "Lucy",
+      "Amy",
+      "Glen",
+      "Peter",
+    ];
+    //Sort names in ascending order
+    let sortedNames = names.sort();
 
-</body>
+    //reference
+    let input = document.getElementById("input");
 
+    //Execute function on keyup
+    input.addEventListener("keyup", (e) => {
+      //loop through above array
+      //Initially remove all elements ( so if user erases a letter or adds new letter then clean previous outputs)
+      removeElements();
+      for (let i of sortedNames) {
+        //convert input to lowercase and compare with each string
+
+        if (
+          i.toLowerCase().startsWith(input.value.toLowerCase()) &&
+          input.value != ""
+        ) {
+          //create li element
+          let listItem = document.createElement("li");
+          //One common class name
+          listItem.classList.add("list-items");
+          listItem.style.cursor = "pointer";
+          listItem.setAttribute("onclick", "displayNames('" + i + "')");
+          //Display matched part in bold
+          let word = "<b>" + i.substr(0, input.value.length) + "</b>";
+          word += i.substr(input.value.length);
+          //display the value in array
+          listItem.innerHTML = word;
+          document.querySelector(".list").appendChild(listItem);
+        }
+      }
+    });
+    function displayNames(value) {
+      input.value = value;
+      removeElements();
+    }
+    function removeElements() {
+      //clear all the item
+      let items = document.querySelectorAll(".list-items");
+      items.forEach((item) => {
+        item.remove();
+      });
+    }
+  </script>
 </html>
