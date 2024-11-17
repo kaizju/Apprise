@@ -25,7 +25,10 @@
     />
     <link rel="stylesheet" href="../style.css" />
     <style>
-         .container {
+        .small{
+            margin-top: 1rem;
+        }
+    .container1 {
       display: flex;
       height: 100vh;
     }
@@ -112,7 +115,7 @@
     </div>
   </nav>
   <body>
-    <div class="container">
+    <div class="container1">
       <!-- Left Side: Search Results -->
       <div class="results" id="results">
         <p class="no-result">Loading results...</p>
@@ -124,82 +127,111 @@
       </div>
     </div>
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        class AppletCard {
-          constructor(t, d, l, e, c) {
-            this.title = t;
-            this.company = c;
-            this.description = d;
-            this.link = l;
-            this.exper = e;
-          }
-          createCard() {
-            const card = document.createElement("div");
-            card.className = "card applet-card mb-3";
-            card.innerHTML = `
-            <div class="card-body">.
-                <h3>${this.title}</h3>
-                <h5>${this.company}</h5>
-                <p>${this.description}</p>
-                <a href="${this.link}" class="btn btn-primary">Apply Now</a>
-                </div>`;
-            return card;
-          }
-        }
+  document.addEventListener("DOMContentLoaded", () => {
+  class AppletCard {
+    constructor(t, d, l, e, c, s, r, ga) {
+      this.title = t || "No Title Available";
+      this.company = c || "Unknown Company";
+      this.description = d || "No Description Available";
+      this.link = l || "#";
+      this.location = e || "Location Not Specified";
+      this.salary = s || "Salary Not Specified";
+      this.requirements = r || "Requirements Not Specified";
+      this.small = ga || "No Additional Information";
+    }
 
-        class AppletRenderer {
-          constructor(id) {
-            this.container = document.getElementById(id);
-          }
-          fetchAppletData(url) {
-            fetch(url)
-              .then((res) => res.json())
-              .then((data) => this.renderApplets(data))
-              .catch((err) => console.error("Error loading applet data:", err));
-          }
-          renderApplets(data) {
-            this.container.innerHTML = "";
-            data.forEach((applet) => {
-              const card = new AppletCard(
-                applet.title,
-                applet.description,
-                applet.link
-              );
-              this.container.appendChild(card.createCard());
-            });
-          }
-        }
+    createCard() {
+      const card = document.createElement("div");
+      card.className = "card applet-card mb-3";
+      card.innerHTML = `
+      <div class="card-body">
+          <h3>${this.title}</h3>
+          <h5>${this.company}</h5>
+          <p>${this.location}</p>
+          <p>${this.salary}</p>
+          <p>${this.description}</p>
+          <p>${this.requirements}</p>
+          <a href="${this.link}" class="btn btn-primary">Apply Now</a>
+      </div>`;
+      return card;
+    }
+  }
 
-        const appletRenderer = new AppletRenderer("details");
-        const resultsContainer = document.getElementById("results");
+  class AppletRenderer {
+    constructor(id) {
+      this.container = document.getElementById(id);
+    }
 
-        function renderResults(data) {
-          resultsContainer.innerHTML = "";
-          if (!data.length)
-            return (resultsContainer.innerHTML = `<p class="no-result">No results found...</p>`);
-          data.forEach((item) => {
-            const resultItem = document.createElement("div");
-            resultItem.className =
-              "result-item list-group-item list-group-item-action";
-            resultItem.textContent = item.title;
-            resultItem.onclick = () => appletRenderer.renderApplets([item]);
-            resultsContainer.appendChild(resultItem);
-          });
-        }
+    fetchAppletData(url) {
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => this.renderApplets(data))
+        .catch((err) => console.error("Error loading applet data:", err));
+    }
 
-        fetch("water.json")
-          .then((res) => {
-            if (!res.ok) throw new Error("Failed to fetch data");
-            return res.json();
-          })
-          .then(renderResults)
-          .catch((err) => {
-            console.error("Error fetching data:", err);
-            resultsContainer.innerHTML = `<p class="no-result">Failed to load results. Please try again later.</p>`;
-          });
+    renderApplets(data) {
+      this.container.innerHTML = "";
 
-        appletRenderer.fetchAppletData("water.json");
+      data.forEach((applet) => {
+        const card = new AppletCard(
+          applet.title,
+          applet.description,
+          applet.link,
+          applet.location,
+          applet.company,
+          applet.salary,
+          applet.requirements,
+          applet.small
+        );
+        this.container.appendChild(card.createCard());
       });
+    }
+  }
+
+  const appletRenderer = new AppletRenderer("details");
+  const resultsContainer = document.getElementById("results");
+
+  function renderResults(data) {
+    resultsContainer.innerHTML = "";
+    if (!data.length)
+      return (resultsContainer.innerHTML = `<p class="no-result">No results found...</p>`);
+    data.forEach((item) => {
+      const resultItem = document.createElement("div");
+      resultItem.className = "result-item list-group-item list-group-item-action";
+      const logo = document.createElement("img");
+      logo.src = "https://cdn-icons-png.flaticon.com/512/942/942153.png"; // Replace with the actual path to your logo
+      logo.alt = `${item.title} Logo`;
+      logo.className = "logo"; // Add a class for styling if needed
+      logo.style.width = "50px"; // Adjust size as needed
+      logo.style.marginRight = "10px"; // Space between logo and title
+
+      const smallDescription = document.createElement("p");
+      smallDescription.textContent = item.small || "No additional information"; // Use the item's description
+      smallDescription.className = "small"; // Add a class for styling if needed
+      smallDescription.style.fontSize = "0.9em"; // Smaller font size for description
+      smallDescription.style.color = "#555";
+
+      resultItem.appendChild(logo);
+      resultItem.appendChild(document.createTextNode(item.title));
+      resultItem.appendChild(smallDescription); // Append the small description
+      resultItem.onclick = () => appletRenderer.renderApplets([item]);
+      resultsContainer.appendChild(resultItem);
+    });
+  }
+
+  fetch("water.json")
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to fetch data");
+      return res.json();
+    })
+    .then(renderResults)
+    .catch((err) => {
+      console.error("Error fetching data:", err);
+      resultsContainer.innerHTML = `<p class="no-result">Failed to load results. Please try again later.</p>`;
+    });
+
+  appletRenderer.fetchAppletData("water.json");
+});
     </script>
 
     <footer style="font-family: Poppins" class="bg-dark text-white py-4">
