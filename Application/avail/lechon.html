@@ -115,14 +115,61 @@
     </div>
   </nav>
   <body>
-    <div class="container1">
+    <div style="margin-bottom: 3rem;" class="blog-posts">
+        <div  class="container my-5">
+          <!-- Title Above Search Bar -->
+          <h1>Welcome to Apprise</h1>
+          <!-- Added the title here -->
+  
+          <div   class="container my-5">
+            <div class="input-group mb-4" style="width: 500px; margin: 0 auto">
+              <form class="d-flex" style="width: 100%;" onsubmit="return redirectToSearch(event)">
+                <input
+                  type="text"
+                  id="search"
+                  class="form-control search-box"
+                  placeholder="Type to search..."
+                  oninput="showSuggestions()"
+                  required
+                />
+                <button type="submit">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </form>
+            <div class="suggestions" id="suggestions">
+                <!-- Suggestions will appear here -->
+            </div>
+            </div>
+            </div>
+            <section class="skills-container text-center mb-5">
+              <div style="font-weight: bold; margin-top: 1rem">
+                Popular Skills:
+              </div>
+              <a href="#" class="btn btn-primary skill" style="color: rgb(255, 255, 255)"
+                >Web Design</a
+              >
+              <a href="#" class="btn btn-primary skill mx-2" style="color: rgb(255, 255, 255)"
+                >UI/UX Design</a
+              >
+              <a href="#" class="btn btn-primary skill mx-2" style="color: rgb(255, 255, 255)"
+                >Databases</a
+              >
+              <a href="#" class="btn btn-primary skill mx-2" style="color: rgb(255, 255, 255)"
+                >Business Cards</a
+              >
+            </section>
+          </div>
+        </div>
+      </div>
+    
+    <div style="margin-bottom: 3rem;" class="container1">
       <!-- Left Side: Search Results -->
       <div class="results" id="results">
         <p class="no-result">Loading results...</p>
       </div>
 
       <!-- Right Side: Search Details -->
-      <div class="details" id="details">
+      <div  class="details" id="details">
         <p>Select an item to see more details here.</p>
       </div>
     </div>
@@ -199,7 +246,7 @@
       const resultItem = document.createElement("div");
       resultItem.className = "result-item list-group-item list-group-item-action";
       const logo = document.createElement("img");
-      logo.src = "https://cdn-icons-png.flaticon.com/512/942/942153.png"; // Replace with the actual path to your logo
+      logo.src = "   https://cdn-icons-png.flaticon.com/512/4497/4497450.png "; // Replace with the actual path to your logo
       logo.alt = `${item.title} Logo`;
       logo.className = "logo"; // Add a class for styling if needed
       logo.style.width = "50px"; // Adjust size as needed
@@ -232,6 +279,56 @@
 
   appletRenderer.fetchAppletData("water.json");
 });
+function redirectToSearch(event) {
+            event.preventDefault();
+            const query = document.getElementById("search").value.trim();
+            if (query) {
+              if (query.includes("job")) {             
+            window.location.href = `../Jobs/job.html?query=${encodeURIComponent(query)}`;
+        } else if (query.includes("carpenter")) {
+            
+            window.location.href = `../avail/carp.html?query=${encodeURIComponent(query)}`;
+        } else if (query.includes("electrical maintenance")) {
+            
+            window.location.href = `../avail/elec.html?query=${encodeURIComponent(query)}`;
+        } else if (query.includes("lechonero")) {
+            
+            window.location.href = `../avail/lechon.html?query=${encodeURIComponent(query)}`;
+        } else if (query.includes("water refilling")) {
+            
+            window.location.href = `../avail/water.html?query=${encodeURIComponent(query)}`;
+        } else if (query.includes("tubero")) {
+            
+            window.location.href = `../avail/plumber.html?query=${encodeURIComponent(query)}`;
+        }
+
+      }
+    }
+
+        function showSuggestions() {
+            const input = document.getElementById("search").value.toLowerCase();
+            const suggestionsContainer = document.getElementById("suggestions");
+            suggestionsContainer.innerHTML = "";
+
+            if (input.length > 0) {
+                const filteredSuggestions = popularSearches.filter(item =>
+                    item.toLowerCase().includes(input)
+                );
+                filteredSuggestions.forEach(suggestion => {
+                    const suggestionElement = document.createElement("span");
+                    suggestionElement.className = "suggestion-item";
+                    suggestionElement.textContent = suggestion;
+                    suggestionElement.onclick = () => selectSuggestion(suggestion);
+                    suggestionsContainer.appendChild(suggestionElement);
+                });
+            }
+        }
+
+        function selectSuggestion(suggestion) {
+            const searchBox = document.getElementById("search");
+            searchBox.value = suggestion;
+            document.getElementById("suggestions").innerHTML = "";
+        }
     </script>
 
     <footer style="font-family: Poppins" class="bg-dark text-white py-4">
