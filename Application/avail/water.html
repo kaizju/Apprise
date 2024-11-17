@@ -25,12 +25,15 @@
     />
     <link rel="stylesheet" href="../style.css" />
     <style>
-        .small{
+    .small{
             margin-top: 1rem;
         }
     .container1 {
       display: flex;
       height: 100vh;
+    }
+    .suggestions{
+      margin-left: 5rem;
     }
     .results {
       width: 40%;
@@ -123,9 +126,29 @@
             <i style="color: black;" class="fa-solid fa-magnifying-glass"></i>
           </button>
         </form>
-      <div class="suggestions" id="suggestions">
+        </div>
+        <div class="suggestions" id="suggestions">
           <!-- Suggestions will appear here -->
       </div>
+        <div style="margin-left: 5rem; width:20rem; margin-top: 1rem;" class="filter">
+          <label style=" width:20rem; margin-top: 1rem;" for="education-filter">Filter by Education Level:</label>
+          <select style="width:20rem;" id="education-filter" class="form-select" onchange="filterProfiles()">
+            <option value="all">All</option>
+            <option value="undergrad">Undergraduate</option>
+            <option value="college-grad">College Graduate</option>
+            <option value="highschool-grad">High School Graduate</option>
+          </select>
+        </div>
+        <div class="filter">
+          <label style="margin-left: 5rem;" for="location-filter">Filter by Location:</label>
+          <select style="width:20rem; margin-left: 5rem;" id="location-filter" class="form-select" onchange="filterProfiles()">
+            <option value="all">All</option>
+            <option value="new-york">New York</option>
+            <option value="los-angeles">Los Angeles</option>
+            <option value="chicago">Chicago</option>
+          </select>
+        </div>
+     
     </div>
     <div style="margin-bottom: 3rem;" class="container1">
       <!-- Left Side: Search Results -->
@@ -139,7 +162,7 @@
       </div>
     </div>
     <script>
-  document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
   class AppletCard {
     constructor(t, d, l, e, c, s, r, ga) {
       this.title = t || "No Title Available";
@@ -156,15 +179,15 @@
       const card = document.createElement("div");
       card.className = "card applet-card mb-3";
       card.innerHTML = `
-      <div class="card-body">
-          <h3>${this.title}</h3>
-          <h5>${this.company}</h5>
-          <p>${this.location}</p>
-          <p>${this.salary}</p>
-          <p>${this.description}</p>
-          <p>${this.requirements}</p>
-          <a href="${this.link}" class="btn btn-primary">Apply Now</a>
-      </div>`;
+        <div class="card-body">
+            <h3>${this.title}</h3>
+            <h5>${this.company}</h5>
+            <p><strong>Location:</strong> ${this.location}</p>
+            <p><strong>Salary:</strong> ${this.salary}</p>
+            <p>${this.description}</p>
+            <p><strong>Requirements:</strong> ${this.requirements}</p>
+            <a href="${this.link}" class="btn btn-primary">Apply Now</a>
+        </div>`;
       return card;
     }
   }
@@ -205,27 +228,31 @@
 
   function renderResults(data) {
     resultsContainer.innerHTML = "";
-    if (!data.length)
-      return (resultsContainer.innerHTML = `<p class="no-result">No results found...</p>`);
+    if (!data.length) {
+      resultsContainer.innerHTML = `<p class="no-result">No results found...</p>`;
+      return;
+    }
+
     data.forEach((item) => {
       const resultItem = document.createElement("div");
       resultItem.className = "result-item list-group-item list-group-item-action";
+
       const logo = document.createElement("img");
-      logo.src = "   https://cdn-icons-png.flaticon.com/512/4497/4497450.png "; // Replace with the actual path to your logo
+      logo.src = "https://cdn-icons-png.flaticon.com/512/4497/4497450.png"; // Placeholder logo
       logo.alt = `${item.title} Logo`;
-      logo.className = "logo"; // Add a class for styling if needed
-      logo.style.width = "50px"; // Adjust size as needed
-      logo.style.marginRight = "10px"; // Space between logo and title
+      logo.className = "logo";
+      logo.style.width = "50px";
+      logo.style.marginRight = "10px";
 
       const smallDescription = document.createElement("p");
-      smallDescription.textContent = item.small || "No additional information"; // Use the item's description
-      smallDescription.className = "small"; // Add a class for styling if needed
-      smallDescription.style.fontSize = "0.9em"; // Smaller font size for description
+      smallDescription.textContent = item.small || "No additional information";
+      smallDescription.className = "small";
+      smallDescription.style.fontSize = "0.9em";
       smallDescription.style.color = "#555";
 
       resultItem.appendChild(logo);
       resultItem.appendChild(document.createTextNode(item.title));
-      resultItem.appendChild(smallDescription); // Append the small description
+      resultItem.appendChild(smallDescription);
       resultItem.onclick = () => appletRenderer.renderApplets([item]);
       resultsContainer.appendChild(resultItem);
     });
@@ -243,57 +270,70 @@
     });
 
   appletRenderer.fetchAppletData("water.json");
-});
-function redirectToSearch(event) {
-            event.preventDefault();
-            const query = document.getElementById("search").value.trim();
-            if (query) {
-              if (query.includes("job")) {             
-            window.location.href = `../Jobs/job.html?query=${encodeURIComponent(query)}`;
-        } else if (query.includes("carpenter")) {
-            
-            window.location.href = `../avail/carp.html?query=${encodeURIComponent(query)}`;
-        } else if (query.includes("electrical maintenance")) {
-            
-            window.location.href = `../avail/elec.html?query=${encodeURIComponent(query)}`;
-        } else if (query.includes("lechonero")) {
-            
-            window.location.href = `../avail/lechon.html?query=${encodeURIComponent(query)}`;
-        } else if (query.includes("water refilling")) {
-            
-            window.location.href = `../avail/water.html?query=${encodeURIComponent(query)}`;
-        } else if (query.includes("tubero")) {
-            
-            window.location.href = `../avail/plumber.html?query=${encodeURIComponent(query)}`;
-        }
 
+  document.getElementById("search").addEventListener("keypress", redirectToSearch);
+
+function redirectToSearch(event) {
+  if (event.key === "Enter") { // Redirect only on pressing Enter
+    event.preventDefault();
+    const query = document.getElementById("search").value.trim().toLowerCase();
+    if (query) {
+      // Logic to decide the redirection URL
+       if (query.includes("carp")) {
+        // Redirect to avail/carp page if the query relates to carpentry
+        window.location.href = `../avail/carp.html?query=${encodeURIComponent(query)}`;
+      }else if (query.includes("water refilling")) {
+        // Redirect to avail/carp page if the query relates to carpentry
+        window.location.href = `../avail/water.html?query=${encodeURIComponent(query)}`;
+      }else if (query.includes("tubero")) {
+        // Redirect to avail/carp page if the query relates to carpentry
+        window.location.href = `../avail/plumber.html?query=${encodeURIComponent(query)}`;
+      }else if (query.includes("lechonero")) {
+        // Redirect to avail/carp page if the query relates to carpentry
+        window.location.href = `../avail/lechon.html?query=${encodeURIComponent(query)}`;
+      }else if (query.includes("electrical maintenance")) {
+        // Redirect to avail/carp page if the query relates to carpentry
+        window.location.href = `../avail/elec.html?query=${encodeURIComponent(query)}`;
+      }
+      else if (query.includes("delivery man")) {
+        // Redirect to avail/carp page if the query relates to carpentry
+        window.location.href = `../avail/delivery.html?query=${encodeURIComponent(query)}`;
       }
     }
+  }
+}
 
-        function showSuggestions() {
-            const input = document.getElementById("search").value.toLowerCase();
-            const suggestionsContainer = document.getElementById("suggestions");
-            suggestionsContainer.innerHTML = "";
+// Example popular searches array, can be removed or used elsewhere
+const popularSearches = ["carpenter","delivery man", "electrical maintenance", "lechonero", "water refilling", "tubero"];
 
-            if (input.length > 0) {
-                const filteredSuggestions = popularSearches.filter(item =>
-                    item.toLowerCase().includes(input)
-                );
-                filteredSuggestions.forEach(suggestion => {
-                    const suggestionElement = document.createElement("span");
-                    suggestionElement.className = "suggestion-item";
-                    suggestionElement.textContent = suggestion;
-                    suggestionElement.onclick = () => selectSuggestion(suggestion);
-                    suggestionsContainer.appendChild(suggestionElement);
-                });
-            }
-        }
+  function filterProfiles() {
+    const educationFilter = document.getElementById("education-filter").value;
+    const locationFilter = document.getElementById("location-filter").value;
+    const profiles = document.querySelectorAll(".profile");
 
-        function selectSuggestion(suggestion) {
-            const searchBox = document.getElementById("search");
-            searchBox.value = suggestion;
-            document.getElementById("suggestions").innerHTML = "";
-        }
+    profiles.forEach((profile) => {
+      const education = profile.getAttribute("data-education");
+      const location = profile.getAttribute("data-location");
+
+      const matchesEducation = educationFilter === "all" || education === educationFilter;
+      const matchesLocation = locationFilter === "all" || location === locationFilter;
+
+      if (matchesEducation && matchesLocation) {
+        profile.classList.add("visible");
+        profile.classList.remove("hidden");
+      } else {
+        profile.classList.add("hidden");
+        setTimeout(() => profile.classList.remove("visible"), 500);
+      }
+    });
+  }
+
+  document.getElementById("education-filter").addEventListener("change", filterProfiles);
+  document.getElementById("location-filter").addEventListener("change", filterProfiles);
+
+  filterProfiles();
+});
+
     </script>
 
     <footer style="font-family: Poppins" class="bg-dark text-white py-4">
