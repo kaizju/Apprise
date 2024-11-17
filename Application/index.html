@@ -20,44 +20,8 @@
     ></script>
     <link rel="stylesheet" href="style.css" />
     <title>Apprise</title>
-  </head>
-  <style>
     
-    form {
-      width: 75vmin;
-      height: 100%;
-      position: absolute;
-      transform: translate(-50%, -50%);
-      top: 50%;
-      left: 50%;
-      padding: 40px 0;
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 15px 10px;
-      border: none;
-      border-bottom: 1px solid #645979;
-      outline: none;
-      border-radius: 5px 5px 0 0;
-      background-color: #ffffff;
-      font-size: 16px;
-    }
-    ul {
-      list-style: none;
-    }
-    .list {
-      width: 100%;
-      background-color: #ffffff;
-      border-radius: 0 0 5px 5px;
-    }
-    .list-items {
-      padding: 10px 5px;
-    }
-    .list-items:hover {
-      background-color: #dddddd;
-    }
-  </style>
-
+  </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -153,16 +117,16 @@
             <div style="font-weight: bold; margin-top: 1rem">
               Popular Skills:
             </div>
-            <a href="#" class="btn btn-primary skill" style="color: black"
+            <a href="#" class="btn btn-primary skill" style="color: rgb(255, 255, 255)"
               >Web Design</a
             >
-            <a href="#" class="btn btn-primary skill mx-2" style="color: black"
+            <a href="#" class="btn btn-primary skill mx-2" style="color: rgb(255, 255, 255)"
               >UI/UX Design</a
             >
-            <a href="#" class="btn btn-primary skill mx-2" style="color: black"
+            <a href="#" class="btn btn-primary skill mx-2" style="color: rgb(255, 255, 255)"
               >Databases</a
             >
-            <a href="#" class="btn btn-primary skill mx-2" style="color: black"
+            <a href="#" class="btn btn-primary skill mx-2" style="color: rgb(255, 255, 255)"
               >Business Cards</a
             >
           </section>
@@ -229,7 +193,7 @@
         <div class="services-grid">
           <div class="card" style="width: 20rem">
             <img
-            src=https://img.freepik.com/premium-photo/man-worker-protective-mask-his-face-working-drink-water-factory-checking-blue-water-gallons_51137-5512.jpg?w=740"
+            src="https://www.bloomingfieldsfarm.com/wp-content/uploads/2023/06/hill-mower-1-1024x634.jpg"
             class="card-img-top" alt="...">
             <div class="card-body">
               <h3 class="card-title">Card title</h3>
@@ -274,6 +238,58 @@
             </div>
           </div>
         </div>
+        <div class="services-grid">
+          <div class="card" style="width: 20rem">
+            <img
+              src="https://img.freepik.com/free-photo/delivery-concept-portrait-happy-african-american-delivery-man-red-cloth-holding-box-package-isolated-grey-studio-background-copy-space_1258-1212.jpg?t=st=1731764834~exp=1731768434~hmac=1e8934e841f743952126b78a3c242e3db8fa0ed9dcfb4b09273fb411df8f5274&w=740"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h3 class="card-title">Card title</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <div class="tags">
+                <span>Game Design</span>
+                <span>Environment Artist</span>
+                <span>AI Artist</span>
+                <span>Archviz Artist</span>
+              </div>
+              <a style="margin-top: 2rem" href="#" class="btn btn-primary"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="services-grid">
+          <div class="card" style="width: 20rem">
+            <img
+              src="https://img.freepik.com/free-photo/delivery-concept-portrait-happy-african-american-delivery-man-red-cloth-holding-box-package-isolated-grey-studio-background-copy-space_1258-1212.jpg?t=st=1731764834~exp=1731768434~hmac=1e8934e841f743952126b78a3c242e3db8fa0ed9dcfb4b09273fb411df8f5274&w=740"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h3 class="card-title">Card title</h3>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <div class="tags">
+                <span>Game Design</span>
+                <span>Environment Artist</span>
+                <span>AI Artist</span>
+                <span>Archviz Artist</span>
+              </div>
+              <a style="margin-top: 2rem" href="#" class="btn btn-primary"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
+        </div>
+           
+        </div> 
       </div>
     </div>
     <div class="section">
@@ -420,77 +436,38 @@
     </footer>
   </body>
   <script>
-    let names = [
-      "Ayla",
-      "Jake",
-      "Sean",
-      "Henry",
-      "Brad",
-      "Stephen",
-      "Taylor",
-      "Timmy",
-      "Cathy",
-      "John",
-      "Amanda",
-      "Amara",
-      "Sam",
-      "Sandy",
-      "Danny",
-      "Ellen",
-      "Camille",
-      "Chloe",
-      "Emily",
-      "Nadia",
-      "Mitchell",
-      "Harvey",
-      "Lucy",
-      "Amy",
-      "Glen",
-      "Peter",
-    ];
-    //Sort names in ascending order
-    let sortedNames = names.sort();
+  const names = [
+  "Ayla", "Jake", "Sean", "Henry", "Brad", "Stephen", "Taylor", "Timmy",
+  "Cathy", "John", "Amanda", "Amara", "Sam", "Sandy", "Danny", "Ellen",
+  "Camille", "Chloe", "Emily", "Nadia", "Mitchell", "Harvey", "Lucy", "Amy", "Glen", "Peter"
+];
+const sortedNames = names.sort();
+const input = document.getElementById("input");
+const list = document.querySelector(".list");
 
-    //reference
-    let input = document.getElementById("input");
-
-    //Execute function on keyup
-    input.addEventListener("keyup", (e) => {
-      //loop through above array
-      //Initially remove all elements ( so if user erases a letter or adds new letter then clean previous outputs)
-      removeElements();
-      for (let i of sortedNames) {
-        //convert input to lowercase and compare with each string
-
-        if (
-          i.toLowerCase().startsWith(input.value.toLowerCase()) &&
-          input.value != ""
-        ) {
-          //create li element
-          let listItem = document.createElement("li");
-          //One common class name
-          listItem.classList.add("list-items");
-          listItem.style.cursor = "pointer";
-          listItem.setAttribute("onclick", "displayNames('" + i + "')");
-          //Display matched part in bold
-          let word = "<b>" + i.substr(0, input.value.length) + "</b>";
-          word += i.substr(input.value.length);
-          //display the value in array
-          listItem.innerHTML = word;
-          document.querySelector(".list").appendChild(listItem);
-        }
-      }
-    });
-    function displayNames(value) {
-      input.value = value;
-      removeElements();
-    }
-    function removeElements() {
-      //clear all the item
-      let items = document.querySelectorAll(".list-items");
-      items.forEach((item) => {
-        item.remove();
+input.addEventListener("keyup", () => {
+  const query = input.value.toLowerCase();
+  removeElements();
+  if (query) {
+      sortedNames.forEach(name => {
+          if (name.toLowerCase().startsWith(query)) {
+              const listItem = document.createElement("li");
+              listItem.classList.add("list-items");
+              listItem.onclick = () => displayNames(name);
+              listItem.innerHTML = `<b>${name.substr(0, query.length)}</b>${name.substr(query.length)}`;
+              list.appendChild(listItem);
+          }
       });
-    }
-  </script>
+  }
+});
+
+function displayNames(value) {
+  input.value = value;
+  removeElements();
+}
+
+function removeElements() {
+  list.innerHTML = "";
+}
+</script>
 </html>
