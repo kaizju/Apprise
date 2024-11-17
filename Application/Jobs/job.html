@@ -21,11 +21,22 @@
     <link rel="stylesheet" href="../style.css" />
     <title>Document</title>
   </head>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <style>
+      .navbar {
+      background-color: black; /* Set navbar background to black */
+    }
+    .navbar .nav-link, .navbar .navbar-brand {
+      color: white !important; /* Set text color to white */
+    }
+    .navbar .nav-link:hover {
+      color: #cccccc !important; /* Optional: Light gray hover effect */
+    }
+  </style>
+ <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="../index.html" style="margin-left: 1rem">
         <img
-          src="https://cdn-icons-png.flaticon.com/512/3935/3935328.png"
+          src="../001-arrow-up.png"
           alt="Apprise Logo"
           style="width: 3rem"
           class="d-inline-block align-text-top"
@@ -73,15 +84,34 @@
     </div>
   </nav>
   <body>
+    
     <div class="upper">
     <h1>Job vacancies</h1>
 
 <a href="#">Home</a> / Job vacancies
+<div style="margin-top: 2rem" class="filter">
+  <label for="education-filter">Filter by Education Level:</label>
+  <select id="education-filter">
+    <option value="all">All</option>
+    <option value="undergrad">Undergraduate</option>
+    <option value="college-grad">College Graduate</option>
+    <option value="highschool-grad">High School Graduate</option>
+  </select>
+</div>
+<div style="margin-top: 2rem" class="filter">
+  <label for="location-filter">Filter by Location:</label>
+  <select id="location-filter">
+    <option value="all">All</option>
+    <option value="new-york">New York</option>
+    <option value="los-angeles">Los Angeles</option>
+    <option value="chicago">Chicago</option>
+  </select>
+</div>
 </div>
     <div class="container my-5">
         <h1 class="mb-4">Job Openings</h1>
         <!-- Job 1 -->
-        <div class="job-card">
+        <div class="profile" data-education="undergrad" data-location="new-york">
             <div class="d-flex">
                 <img src="https://via.placeholder.com/80" alt="Company Logo" class="me-3">
                 <div>
@@ -98,7 +128,7 @@
             </div>
         </div>
         <!-- Job 2 -->
-        <div class="job-card">
+        <div class="profile">
             <div class="d-flex">
                 <img src="https://via.placeholder.com/80" alt="Company Logo" class="me-3">
                 <div>
@@ -114,7 +144,7 @@
                 </div>
             </div>
         </div>
-        <div class="job-card">
+        <div class="profile">
             <div class="d-flex">
                 <img src="https://via.placeholder.com/80" alt="Company Logo" class="me-3">
                 <div>
@@ -130,7 +160,7 @@
                 </div>
             </div>
         </div>
-        <div class="job-card">
+        <div class="profile">
             <div class="d-flex">
                 <img src="https://via.placeholder.com/80" alt="Company Logo" class="me-3">
                 <div>
@@ -146,7 +176,7 @@
                 </div>
             </div>
         </div>
-        <div class="job-card">
+        <div class="profile">
             <div class="d-flex">
                 <img src="https://via.placeholder.com/80" alt="Company Logo" class="me-3">
                 <div>
@@ -162,7 +192,7 @@
                 </div>
             </div>
         </div>
-        <div class="job-card">
+        <div class="profile">
             <div class="d-flex">
                 <img src="https://via.placeholder.com/80" alt="Company Logo" class="me-3">
                 <div>
@@ -247,5 +277,39 @@
           </div>
         </div>
       </footer>
+      <script>
+          function filterProfiles() {
+      const educationFilter = document.getElementById('education-filter').value;
+      const locationFilter = document.getElementById('location-filter').value;
+      const profiles = document.querySelectorAll('.profile');
+
+      profiles.forEach(profile => {
+        const education = profile.getAttribute('data-education');
+        const location = profile.getAttribute('data-location');
+
+        // Determine if the profile matches both filters
+        const matchesEducation = educationFilter === 'all' || education === educationFilter;
+        const matchesLocation = locationFilter === 'all' || location === locationFilter;
+
+        // Show the profile if it matches both filters
+        if (matchesEducation && matchesLocation) {
+          profile.classList.add('visible');
+          profile.classList.remove('hidden');
+        } else {
+          profile.classList.add('hidden');
+          setTimeout(() => {
+            profile.classList.remove('visible');
+          }, 500); // Match CSS transition duration
+        }
+      });
+    }
+
+    // Attach event listeners to both filters
+    document.getElementById('education-filter').addEventListener('change', filterProfiles);
+    document.getElementById('location-filter').addEventListener('change', filterProfiles);
+
+    // Trigger initial filter to show all profiles by default
+    filterProfiles();
+      </script>
   </body>
 </html>
