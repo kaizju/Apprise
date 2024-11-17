@@ -21,6 +21,74 @@
     <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Poppins">  
     <link rel="stylesheet" href="style.css" />
     <title>Apprise</title>
+    <style>
+      /* Custom Responsive Styles */
+      .navbar-brand img {
+        width: 3rem;
+      }
+    
+      .services-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+    
+      .card {
+        margin-bottom: 1rem;
+      }
+    
+      .why-choose-us img {
+        width: 100%;
+        max-width: 400px;
+      }
+    
+      @media (max-width: 768px) {
+        .footer-links {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 1rem;
+        }
+    
+        .skills-container a {
+          margin: 0.5rem 0;
+        }
+    
+        .input-group {
+          width: 100%;
+        }
+    
+        .blog-posts h1 {
+          font-size: 1.5rem;
+        }
+    
+        .services-grid {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    
+      @media (max-width: 576px) {
+        .navbar-brand {
+          margin: 0 auto;
+        }
+    
+        .card img {
+          max-height: 200px;
+          object-fit: cover;
+        }
+    
+        .content-container h1 {
+          font-size: 1.5rem;
+        }
+    
+        .footer-bottom {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+      }
+    </style>
     
   </head>
   <body>
