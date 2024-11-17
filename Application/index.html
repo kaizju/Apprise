@@ -25,7 +25,7 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="margin-left: 1rem">
+        <a class="navbar-brand" href="./index.html" style="margin-left: 1rem">
           <img
             src="https://cdn-icons-png.flaticon.com/512/3935/3935328.png"
             alt="Apprise Logo"
@@ -45,13 +45,13 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div style="margin-right: 10rem;" class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="./Jobs/index.html">Find Jobs</a>
             </li>
             <li class="nav-item dropdown">
               <a
@@ -61,35 +61,19 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                Info
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
+                <li><a class="dropdown-item" href="#">About</a></li>
+                <li><a class="dropdown-item" href="#">Contact Us</a></li>
+                
+                
               </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>
           </ul>
         </div>
       </div>
-      <a
-        href="#"
-        class="btn btn-primary resume-button"
-        style="
-          border-color: black;
-          color: black;
-          background-color: white;
-          margin-top: 0.5rem;
-          margin-right: 1rem;
-        "
-        >Make a Resume</a
-      >
+    
     </nav>
 
     <div class="blog-posts">
@@ -100,19 +84,22 @@
 
         <div class="container my-5">
           <div class="input-group mb-4" style="width: 500px; margin: 0 auto">
-            <input
-              autocomplete="off"
-              id="input"
-              type="search"
-              class="form-control rounded"
-              placeholder="Search"
-              aria-label="Search"
-              aria-describedby="search-addon"
-            />
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <form onsubmit="return redirectToSearch(event)">
+              <input
+                  type="text"
+                  id="search"
+                  class="search-box"
+                  placeholder="Type to search..."
+                  oninput="showSuggestions()"
+                  required
+              />
+              <button type="submit" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+          <div class="suggestions" id="suggestions">
+              <!-- Suggestions will appear here -->
           </div>
-          <ul style="color:black"class="list"></ul>
-
+          </div>
+          </div>
           <section class="skills-container text-center mb-5">
             <div style="font-weight: bold; margin-top: 1rem">
               Popular Skills:
@@ -266,7 +253,7 @@
         <div class="services-grid">
           <div class="card" style="width: 20rem">
             <img
-              src="https://img.freepik.com/free-photo/delivery-concept-portrait-happy-african-american-delivery-man-red-cloth-holding-box-package-isolated-grey-studio-background-copy-space_1258-1212.jpg?t=st=1731764834~exp=1731768434~hmac=1e8934e841f743952126b78a3c242e3db8fa0ed9dcfb4b09273fb411df8f5274&w=740"
+              src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.idealpurewater.com%2Fhow-long-does-a-five-gallon-water-jug-last&psig=AOvVaw3PUgWXebicnd8Y4W9G6Nao&ust=1731892821991000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJDe8deZ4okDFQAAAAAdAAAAABAR"
               class="card-img-top"
               alt="..."
             />
@@ -436,38 +423,39 @@
     </footer>
   </body>
   <script>
-  const names = [
-  "Ayla", "Jake", "Sean", "Henry", "Brad", "Stephen", "Taylor", "Timmy",
-  "Cathy", "John", "Amanda", "Amara", "Sam", "Sandy", "Danny", "Ellen",
-  "Camille", "Chloe", "Emily", "Nadia", "Mitchell", "Harvey", "Lucy", "Amy", "Glen", "Peter"
-];
-const sortedNames = names.sort();
-const input = document.getElementById("input");
-const list = document.querySelector(".list");
 
-input.addEventListener("keyup", () => {
-  const query = input.value.toLowerCase();
-  removeElements();
-  if (query) {
-      sortedNames.forEach(name => {
-          if (name.toLowerCase().startsWith(query)) {
-              const listItem = document.createElement("li");
-              listItem.classList.add("list-items");
-              listItem.onclick = () => displayNames(name);
-              listItem.innerHTML = `<b>${name.substr(0, query.length)}</b>${name.substr(query.length)}`;
-              list.appendChild(listItem);
-          }
-      });
-  }
-});
+        
+        function redirectToSearch(event) {
+            event.preventDefault();
+            const query = document.getElementById("search").value.trim();
+            if (query) {
+                window.location.href = `./Jobs/job.html?query=${encodeURIComponent(query)}`;
+            }
+        }
 
-function displayNames(value) {
-  input.value = value;
-  removeElements();
-}
+        function showSuggestions() {
+            const input = document.getElementById("search").value.toLowerCase();
+            const suggestionsContainer = document.getElementById("suggestions");
+            suggestionsContainer.innerHTML = "";
 
-function removeElements() {
-  list.innerHTML = "";
-}
+            if (input.length > 0) {
+                const filteredSuggestions = popularSearches.filter(item =>
+                    item.toLowerCase().includes(input)
+                );
+                filteredSuggestions.forEach(suggestion => {
+                    const suggestionElement = document.createElement("span");
+                    suggestionElement.className = "suggestion-item";
+                    suggestionElement.textContent = suggestion;
+                    suggestionElement.onclick = () => selectSuggestion(suggestion);
+                    suggestionsContainer.appendChild(suggestionElement);
+                });
+            }
+        }
+
+        function selectSuggestion(suggestion) {
+            const searchBox = document.getElementById("search");
+            searchBox.value = suggestion;
+            document.getElementById("suggestions").innerHTML = "";
+        }
 </script>
 </html>
