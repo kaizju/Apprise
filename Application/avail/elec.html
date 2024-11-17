@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/f3e6dcfef4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+    .small{
+            margin-top: 1rem;
+        }
+    .container1 {
+      display: flex;
+      height: 100vh;
+    }
+    .suggestions{
+      margin-left: 5rem;
+    }
+    .results {
+      width: 40%;
+      overflow-y: auto;
+      border-right: 1px solid #ddd;
+      padding: 1rem;
+    }
+    .details {
+      width: 60%;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+    .result-item {
+      cursor: pointer;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.2s;
+    }
+    .result-item:hover {
+      background-color: #f0f0f0;
+    }
+    .no-result {
+      color: #888;
+      text-align: center;
+      margin-top: 20px;
+    }
+    </style>
+  </head>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./index.html" style="margin-left: 1rem">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/3935/3935328.png"
+          alt="Apprise Logo"
+          style="width: 3rem"
+          class="d-inline-block align-text-top"
+        />
+        Apprise
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        style="margin-right: 10rem"
+        class="collapse navbar-collapse"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="../index.html"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./Jobs/index.html">Find Jobs</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Info
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">About</a></li>
+              <li><a class="dropdown-item" href="#">Contact Us</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <body>
+    <div style="width: 30rem; margin-left: 2rem; margin-bottom: 1rem; margin-top: 1rem;" class="input-group rounded" >
+        <form class="d-flex" style="width: 80%; height: 7rem;" onsubmit="return redirectToSearch(event)">
+        <input id="search" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" oninput="showSuggestions()"
+        required />
+        <button type="submit">
+            <i style="color: black;" class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+        </div>
+        <div class="suggestions" id="suggestions">
+          <!-- Suggestions will appear here -->
+      </div>
+        <div style="margin-left: 5rem; width:20rem; margin-top: 1rem;" class="filter">
+          <label style=" width:20rem; margin-top: 1rem;" for="education-filter">Filter by Education Level:</label>
+          <select style="width:20rem;" id="education-filter" class="form-select" onchange="filterProfiles()">
+            <option value="all">All</option>
+            <option value="undergrad">Undergraduate</option>
+            <option value="college-grad">College Graduate</option>
+            <option value="highschool-grad">High School Graduate</option>
+          </select>
+        </div>
+        <div class="filter">
+          <label style="margin-left: 5rem;" for="location-filter">Filter by Location:</label>
+          <select style="width:20rem; margin-left: 5rem;" id="location-filter" class="form-select" onchange="filterProfiles()">
+            <option value="all">All</option>
+            <option value="new-york">New York</option>
+            <option value="los-angeles">Los Angeles</option>
+            <option value="chicago">Chicago</option>
+          </select>
+        </div>
+     
+    </div>
+    <div style="margin-bottom: 3rem;" class="container1">
+      <!-- Left Side: Search Results -->
+      <div class="results" id="results">
+        <p class="no-result">Loading results...</p>
+      </div>
+
+      <!-- Right Side: Search Details -->
+      <div  class="details" id="details">
+        <p>Select an item to see more details here.</p>
+      </div>
+    </div>
+    <script>
+ document.addEventListener("DOMContentLoaded", () => {
+  class AppletCard {
+    constructor(t, d, l, e, c, s, r, ga) {
+      this.title = t || "No Title Available";
+      this.company = c || "Unknown Company";
+      this.description = d || "No Description Available";
+      this.link = l || "#";
+      this.location = e || "Location Not Specified";
+      this.salary = s || "Salary Not Specified";
+      this.requirements = r || "Requirements Not Specified";
+      this.small = ga || "No Additional Information";
+    }
+
+    createCard() {
+      const card = document.createElement("div");
+      card.className = "card applet-card mb-3";
+      card.innerHTML = `
+        <div class="card-body">
+            <h3>${this.title}</h3>
+            <h5>${this.company}</h5>
+            <p><strong>Location:</strong> ${this.location}</p>
+            <p><strong>Salary:</strong> ${this.salary}</p>
+            <p>${this.description}</p>
+            <p><strong>Requirements:</strong> ${this.requirements}</p>
+            <a href="${this.link}" class="btn btn-primary">Apply Now</a>
+        </div>`;
+      return card;
+    }
+  }
+
+  class AppletRenderer {
+    constructor(id) {
+      this.container = document.getElementById(id);
+    }
+
+    fetchAppletData(url) {
+      fetch(url)
+        .then((res) => res.json())
+        .then((data) => this.renderApplets(data))
+        .catch((err) => console.error("Error loading applet data:", err));
+    }
+
+    renderApplets(data) {
+      this.container.innerHTML = "";
+
+      data.forEach((applet) => {
+        const card = new AppletCard(
+          applet.title,
+          applet.description,
+          applet.link,
+          applet.location,
+          applet.company,
+          applet.salary,
+          applet.requirements,
+          applet.small
+        );
+        this.container.appendChild(card.createCard());
+      });
+    }
+  }
+
+  const appletRenderer = new AppletRenderer("details");
+  const resultsContainer = document.getElementById("results");
+
+  function renderResults(data) {
+    resultsContainer.innerHTML = "";
+    if (!data.length) {
+      resultsContainer.innerHTML = `<p class="no-result">No results found...</p>`;
+      return;
+    }
+
+    data.forEach((item) => {
+      const resultItem = document.createElement("div");
+      resultItem.className = "result-item list-group-item list-group-item-action";
+
+      const logo = document.createElement("img");
+      logo.src = "https://cdn-icons-png.flaticon.com/512/4497/4497450.png"; // Placeholder logo
+      logo.alt = `${item.title} Logo`;
+      logo.className = "logo";
+      logo.style.width = "50px";
+      logo.style.marginRight = "10px";
+
+      const smallDescription = document.createElement("p");
+      smallDescription.textContent = item.small || "No additional information";
+      smallDescription.className = "small";
+      smallDescription.style.fontSize = "0.9em";
+      smallDescription.style.color = "#555";
+
+      resultItem.appendChild(logo);
+      resultItem.appendChild(document.createTextNode(item.title));
+      resultItem.appendChild(smallDescription);
+      resultItem.onclick = () => appletRenderer.renderApplets([item]);
+      resultsContainer.appendChild(resultItem);
+    });
+  }
+
+  fetch("water.json")
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to fetch data");
+      return res.json();
+    })
+    .then(renderResults)
+    .catch((err) => {
+      console.error("Error fetching data:", err);
+      resultsContainer.innerHTML = `<p class="no-result">Failed to load results. Please try again later.</p>`;
+    });
+
+  appletRenderer.fetchAppletData("water.json");
+
+  document.getElementById("search").addEventListener("keypress", redirectToSearch);
+
+function redirectToSearch(event) {
+  if (event.key === "Enter") { // Redirect only on pressing Enter
+    event.preventDefault();
+    const query = document.getElementById("search").value.trim().toLowerCase();
+    if (query) {
+      // Logic to decide the redirection URL
+       if (query.includes("carp")) {
+        // Redirect to avail/carp page if the query relates to carpentry
+        window.location.href = `../avail/carp.html?query=${encodeURIComponent(query)}`;
+      }else if (query.includes("water refilling")) {
+        // Redirect to avail/carp page if the query relates to carpentry
+        window.location.href = `../avail/water.html?query=${encodeURIComponent(query)}`;
+      }else if (query.includes("tubero")) {
+        // Redirect to avail/carp page if the query relates to carpentry
+        window.location.href = `../avail/plumber.html?query=${encodeURIComponent(query)}`;
+      }else if (query.includes("lechonero")) {
+        // Redirect to avail/carp page if the query relates to carpentry
+        window.location.href = `../avail/lechon.html?query=${encodeURIComponent(query)}`;
+      }else if (query.includes("electrical maintenance")) {
+        // Redirect to avail/carp page if the query relates to carpentry
+        window.location.href = `../avail/elec.html?query=${encodeURIComponent(query)}`;
+      }
+      else if (query.includes("delivery man")) {
+        // Redirect to avail/carp page if the query relates to carpentry
+        window.location.href = `../avail/delivery.html?query=${encodeURIComponent(query)}`;
+      }
+    }
+  }
+}
+
+// Example popular searches array, can be removed or used elsewhere
+const popularSearches = ["carpenter","delivery man", "electrical maintenance", "lechonero", "water refilling", "tubero"];
+
+  function filterProfiles() {
+    const educationFilter = document.getElementById("education-filter").value;
+    const locationFilter = document.getElementById("location-filter").value;
+    const profiles = document.querySelectorAll(".profile");
+
+    profiles.forEach((profile) => {
+      const education = profile.getAttribute("data-education");
+      const location = profile.getAttribute("data-location");
+
+      const matchesEducation = educationFilter === "all" || education === educationFilter;
+      const matchesLocation = locationFilter === "all" || location === locationFilter;
+
+      if (matchesEducation && matchesLocation) {
+        profile.classList.add("visible");
+        profile.classList.remove("hidden");
+      } else {
+        profile.classList.add("hidden");
+        setTimeout(() => profile.classList.remove("visible"), 500);
+      }
+    });
+  }
+
+  document.getElementById("education-filter").addEventListener("change", filterProfiles);
+  document.getElementById("location-filter").addEventListener("change", filterProfiles);
+
+  filterProfiles();
+});
+
+    </script>
+
+    <footer style="font-family: Poppins" class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <img
+              style="width: 3rem; margin-bottom: 1rem"
+              src="../001-arrow-up.png"
+              alt="Apprise Logo"
+            />
+            <p>
+              A freelance service website connecting businesses with
+              freelancers, making project collaboration more efficient.
+            </p>
+            <ul class="social-media list-unstyled">
+              <li>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h4 style="font-family: Poppins, sans-serif; font-weight: 900">
+              Product
+            </h4>
+            <ul style="font-family: Poppins, sans-serif" class="list-unstyled">
+              <li><a style="color: white" href="#">About</a></li>
+              <li><a style="color: white" href="#">Team</a></li>
+              <li><a style="color: white" href="#">Careers</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h4 style="font-family: Poppins, sans-serif; font-weight: 900">
+              Support
+            </h4>
+            <ul
+              style="font-family: Poppins, sans-serif; font-weight: 100"
+              class="list-unstyled"
+            >
+              <li><a style="color: white" href="#">How It Works</a></li>
+              <li><a style="color: white" href="#">Trust & Safety</a></li>
+              <li><a style="color: white" href="#">Help Centre</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h4 style="font-family: Poppins, sans-serif; font-weight: 900">
+              Resources
+            </h4>
+            <ul
+              style="
+                font-family: Poppins, sans-serif;
+                font-weight: 50;
+                font-style: normal;
+              "
+              class="list-unstyled"
+            >
+              <li><a style="color: white" href="#">Customer Stories</a></li>
+              <li><a style="color: white" href="#">Cost Calculator</a></li>
+              <li><a style="color: white" href="#">Startup Cities</a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="footer-bottom d-flex justify-content-between align-items-center"
+        >
+          <div class="copyright">
+            <p>&copy; 2023 Connect Pvt. Ltd.</p>
+          </div>
+          <ul class="footer-links list-unstyled d-flex mb-0">
+            <li><a style="color: white" href="">Terms</a></li>
+            <li><a style="color: white" href="#">Privacy</a></li>
+            <li><a style="color: white" href="#">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
