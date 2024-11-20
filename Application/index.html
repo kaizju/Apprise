@@ -88,11 +88,13 @@
           text-align: center;
         }
       }
+     
     </style>
     
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="./index.html" style="margin-left: 1rem">
           <img
@@ -547,5 +549,16 @@
             searchBox.value = suggestion;
             document.getElementById("suggestions").innerHTML = "";
         }
+</script>
+
+<script>
+  const nav = document.querySelector('.nav')
+  window.addEventListener('scroll',fixNav)
+
+  function fixNav(){
+    if(window.scroll){
+      
+    }
+  }
 </script>
 </html>
