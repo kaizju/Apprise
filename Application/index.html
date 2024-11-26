@@ -186,9 +186,7 @@
             <a href="./avail/elec.html" class="btn btn-primary skill mx-2" style="color: rgb(255, 255, 255)"
               >Electrical Maintenance</a
             >
-            <a href="./avail/lechon.html" class="btn btn-primary skill mx-2" style="color: rgb(255, 255, 255)"
-              >Lechonero</a
-            >
+           
           </section>
         </div>
       </div>
@@ -492,6 +490,7 @@
           </ul>
         </div>
       </div>
+
     </footer>
   </body>
   <script>  
@@ -499,27 +498,25 @@
             event.preventDefault();
             const query = document.getElementById("search").value.trim();
             if (query) {
-              if (query.includes("job")) {             
-            window.location.href = `./Jobs/job.html?query=${encodeURIComponent(query)}`;
-        } else if (query.includes("carpenter")) {
+            if (query.includes("carpenter")) {
             
-            window.location.href = `./avail/carp.html?query=${encodeURIComponent(query)}`;
+            window.location.href = `./avail/carp/carp.html?query=${encodeURIComponent(query)}`;
         } else if (query.includes("electrical maintenance")) {
             
-            window.location.href = `./avail/elec.html?query=${encodeURIComponent(query)}`;
+            window.location.href = `./avail/elec/elec.html?query=${encodeURIComponent(query)}`;
         } else if (query.includes("lechonero")) {
             
-            window.location.href = `./avail/lechon.html?query=${encodeURIComponent(query)}`;
+            window.location.href = `./avail/lechon/lechon.html?query=${encodeURIComponent(query)}`;
         } else if (query.includes("water refilling")) {
             
-            window.location.href = `./avail/water.html?query=${encodeURIComponent(query)}`;
+            window.location.href = `./avail/water/water.html?query=${encodeURIComponent(query)}`;
         } else if (query.includes("tubero")) {
             
-            window.location.href = `./avail/plumber.html?query=${encodeURIComponent(query)}`;
+            window.location.href = `./avail/plum/plumber.html?query=${encodeURIComponent(query)}`;
         }
          else if (query.includes("delivery man")) {
             
-            window.location.href = `./avail/delivery.html?query=${encodeURIComponent(query)}`;
+            window.location.href = `./avail/delivery/delivery.html?query=${encodeURIComponent(query)}`;
         }
 
       }

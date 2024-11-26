@@ -1,40 +1,4 @@
-const results = [
-    { 
-        id: 1, 
-        title: "Result 1", 
-        description: "This is a detailed description of Result 1.",
-        category: "Category A",
-        image: "https://via.placeholder.com/150"
-    },
-    { 
-        id: 2, 
-        title: "Result 2", 
-        description: "This is a detailed description of Result 2.",
-        category: "Category B",
-        image: "https://via.placeholder.com/150"
-    },
-    { 
-        id: 3, 
-        title: "Result 3", 
-        description: "This is a detailed description of Result 3.",
-        category: "Category C",
-        image: "https://via.placeholder.com/150"
-    },
-    { 
-        id: 4, 
-        title: "Result 4", 
-        description: "This is a detailed description of Result 4.",
-        category: "Category A",
-        image: "https://via.placeholder.com/150"
-    },
-    { 
-        id: 5, 
-        title: "Result 5", 
-        description: "This is a detailed description of Result 5.",
-        category: "Category B",
-        image: "https://via.placeholder.com/150"
-    }
-];
+
 
 function displayResults(filteredResults) {
     const resultList = document.getElementById('resultList');
