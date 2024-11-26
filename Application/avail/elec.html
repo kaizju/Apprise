@@ -23,7 +23,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Poppins"
     />
-    <link rel="stylesheet" href="/Application/style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <style>
     .small{
             margin-top: 1rem;
@@ -238,7 +238,7 @@
       resultItem.className = "result-item list-group-item list-group-item-action";
 
       const logo = document.createElement("img");
-      logo.src = "https://cdn-icons-png.flaticon.com/512/4497/4497450.png"; // Placeholder logo
+      logo.src = "   https://cdn-icons-png.flaticon.com/512/307/307943.png "; // Placeholder logo
       logo.alt = `${item.title} Logo`;
       logo.className = "logo";
       logo.style.width = "50px";
@@ -258,7 +258,7 @@
     });
   }
 
-  fetch("water.json")
+  fetch("elec.json")
     .then((res) => {
       if (!res.ok) throw new Error("Failed to fetch data");
       return res.json();
