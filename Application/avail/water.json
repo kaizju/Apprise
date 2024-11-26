@@ -7,11 +7,12 @@
       "description": "Coordinate with Internal Clients on matters relating to the POS System. Troubleshoot POS System hardware and software issues either physically or online when applicable. Set up POS hardware and software in assigned stores. Pull-out POS hardware from assigned stores; facilitate POS training for Store Personnel. Upload Store Sales files to SAP. Communicate with Store Personnel to maintain timeliness and accuracy of Store Sales Files for SAP uploading; coordinate with other departments on the status of Store Sales files uploaded to or for uploading to SAP. Set up operating system, applications, and other software in computers. Solve IT-related issues of internal customers over the phone, messaging apps, online meeting, or face-to-face. Coordinate with MIS Personnel on Daily IT Tickets from Stores. Close IT tickets within Service Level Agreement duration.",
       "requirements": 
         "<li>Bachelor's Degree in Information Technology or any related course.</li><li>Product knowledge.</li><li>Problem-solving skills.</li><li>Analytical skills.</li><li>Attentiveness.</li><li>Time Management skills.</li>",
-      "link": "job2.html"
+      "small":"",
+        "link": "job2.html"
     },
     {
-        "title": "IT Analyst",
-        "company": "Meera Enterprises Inc.",
+        "title": "DSD Water Refilling Station",
+        "company": "DSD Company.",
         "location": "Philippines",
         "salary": "P350 - P500",
         "description":" ",
@@ -21,13 +22,14 @@
         "link": "job2.html"
       },
       {
-        "title": "IT Analyst",
-        "company": "Meera Enterprises Inc.",
+        "title": "Dahilayan Refiling Station",
+        "company": "Dahilayan Refilling Company.",
         "location": "Philippines",
         "salary": "P350 - P500",
         "description": "Coordinate with Internal Clients on matters relating to the POS System. Troubleshoot POS System hardware and software issues either physically or online when applicable. Set up POS hardware and software in assigned stores. Pull-out POS hardware from assigned stores; facilitate POS training for Store Personnel. Upload Store Sales files to SAP. Communicate with Store Personnel to maintain timeliness and accuracy of Store Sales Files for SAP uploading; coordinate with other departments on the status of Store Sales files uploaded to or for uploading to SAP. Set up operating system, applications, and other software in computers. Solve IT-related issues of internal customers over the phone, messaging apps, online meeting, or face-to-face. Coordinate with MIS Personnel on Daily IT Tickets from Stores. Close IT tickets within Service Level Agreement duration.",
         "requirements": 
           "<li>Bachelor's Degree in Information Technology or any related course.</li><li>Product knowledge.</li><li>Problem-solving skills.</li><li>Analytical skills.</li><li>Attentiveness.</li><li>Time Management skills.</li>",
-        "link": "job2.html"
+        "small":"",
+          "link": "job2.html"
       }
   ]

@@ -258,7 +258,7 @@
     });
   }
 
-  fetch("water.json")
+  fetch("plumber.json")
     .then((res) => {
       if (!res.ok) throw new Error("Failed to fetch data");
       return res.json();
@@ -269,7 +269,7 @@
       resultsContainer.innerHTML = `<p class="no-result">Failed to load results. Please try again later.</p>`;
     });
 
-  appletRenderer.fetchAppletData("water.json");
+  appletRenderer.fetchAppletData("../avail/plumber.json");
 
   document.getElementById("search").addEventListener("keypress", redirectToSearch);
 
