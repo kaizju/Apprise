@@ -1,0 +1,19 @@
+[
+    {
+        "title": "De La Cruz",
+        "company": "Pharv",
+        "location": "Philippines",
+        "salary": "P350 - P500",
+        "description": "De La Cruz Services specializes in creating custom furniture, cabinets, and home interiors. With an emphasis on precision and craftsmanship, our team brings every project to life, from small home repairs to large-scale renovations. We focus on delivering quality work that combines traditional techniques with modern designs.",
+        "link": "job2.html"
+    },
+    {
+        "title": "Dok Dok Carpentry",
+        "company": "Express",
+        "location": "Philippines",
+        "salary": "P350 - P500",
+        "description": " Dok Dok Carpentry  offers expert carpentry solutions for residential and commercial projects. Our services include framing, flooring, roofing, and detailed woodwork installations. Known for delivering durable and elegant results, we take pride in turning our clients' visions into reality.",
+        "link": "job2.html"
+    }
+
+]

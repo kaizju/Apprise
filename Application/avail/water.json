@@ -2,34 +2,33 @@
     {
       "title": "DEARBC Water Refilling Station",
       "company": "DEARBC",
-      "location": "Philippines",
+      "location": "Damilag",
       "salary": "P350 - P500",
-      "description": "Coordinate with Internal Clients on matters relating to the POS System. Troubleshoot POS System hardware and software issues either physically or online when applicable. Set up POS hardware and software in assigned stores. Pull-out POS hardware from assigned stores; facilitate POS training for Store Personnel. Upload Store Sales files to SAP. Communicate with Store Personnel to maintain timeliness and accuracy of Store Sales Files for SAP uploading; coordinate with other departments on the status of Store Sales files uploaded to or for uploading to SAP. Set up operating system, applications, and other software in computers. Solve IT-related issues of internal customers over the phone, messaging apps, online meeting, or face-to-face. Coordinate with MIS Personnel on Daily IT Tickets from Stores. Close IT tickets within Service Level Agreement duration.",
+      "description": "DEARBC Water Refilling Station offers premium, purified water sourced and filtered using advanced reverse osmosis and UV sterilization technology. Our commitment to quality ensures every drop is refreshing, safe, and clean, ideal for drinking and cooking. Whether for home, office, or commercial use, DEARBC Waters guarantees customer satisfaction with eco-friendly packaging options and efficient refill services.",
       "requirements": 
-        "<li>Bachelor's Degree in Information Technology or any related course.</li><li>Product knowledge.</li><li>Problem-solving skills.</li><li>Analytical skills.</li><li>Attentiveness.</li><li>Time Management skills.</li>",
+        "<li>High School Graduate</li><li>Dedicated Worker</li><li>Time Management</li>",
       "small":"",
-        "link": "job2.html"
+        "link": "../Apply Jobs/Water Jobs/job1.html"
     },
     {
         "title": "DSD Water Refilling Station",
         "company": "DSD Company.",
-        "location": "Philippines",
+        "location": "Tankulan",
         "salary": "P350 - P500",
-        "description":" ",
-        "requirements": 
-          "<li>Bachelor's Degree in Information Technology or any related course.</li><li>Product knowledge.</li><li>Problem-solving skills.</li><li>Analytical skills.</li><li>Attentiveness.</li><li>Time Management skills.</li>",  
+        "description":"DSD Station is your neighborhood solution for clean and affordable water. We prioritize health and sustainability by providing mineral-balanced water in reusable, BPA-free containers. Our team is dedicated to ensuring convenience through automated refill systems, fast service, and tailored water solutions for every need. ",
+        "requirements": " <li>High School Graduate</li><li>Dedicated Worker</li><li>Fast Worker</li>",
         "small":"A water refilling station is a convenient facility designed to provide clean and purified drinking water to the public.",
-        "link": "job2.html"
+        "link": "../Apply Jobs/Water Jobs/job2.html"
       },
       {
         "title": "Dahilayan Refiling Station",
         "company": "Dahilayan Refilling Company.",
         "location": "Philippines",
         "salary": "P350 - P500",
-        "description": "Coordinate with Internal Clients on matters relating to the POS System. Troubleshoot POS System hardware and software issues either physically or online when applicable. Set up POS hardware and software in assigned stores. Pull-out POS hardware from assigned stores; facilitate POS training for Store Personnel. Upload Store Sales files to SAP. Communicate with Store Personnel to maintain timeliness and accuracy of Store Sales Files for SAP uploading; coordinate with other departments on the status of Store Sales files uploaded to or for uploading to SAP. Set up operating system, applications, and other software in computers. Solve IT-related issues of internal customers over the phone, messaging apps, online meeting, or face-to-face. Coordinate with MIS Personnel on Daily IT Tickets from Stores. Close IT tickets within Service Level Agreement duration.",
+        "description": "Stay hydrated with Dahilayan Refiling Station, where water meets innovation. Our facility employs state-of-the-art filtration and remineralization processes to deliver pure, alkaline, and great-tasting water. Perfect for families, fitness enthusiasts, and businesses, Dahilayan Refilling Station is your trusted partner in health and wellness.",
         "requirements": 
-          "<li>Bachelor's Degree in Information Technology or any related course.</li><li>Product knowledge.</li><li>Problem-solving skills.</li><li>Analytical skills.</li><li>Attentiveness.</li><li>Time Management skills.</li>",
+          "<li>High School Graduate</li>",
         "small":"",
-          "link": "job2.html"
+          "link": "../Apply Jobs/Water Jobs/job3.html"
       }
   ]
