@@ -5,7 +5,7 @@
         "location": "Philippines",
         "salary": "P350 - P500",
         "description": "Stack Plum Services specializes in residential plumbing installations and repairs. We pride ourselves on providing prompt, reliable, and high-quality services, including fixing leaks, installing fixtures, and maintaining water systems. Our team ensures customer satisfaction by addressing plumbing issues with efficiency and expertise.",
-        "link": "../Apply Jobs/Plumber/job1.html"
+        "link": "../Apply Jobs/plum1.html"
     },
     {
         "title": "Plumbee",
@@ -13,6 +13,6 @@
         "location": "Philippines",
         "salary": "P350 - P500",
         "description": "Plumbee Plumbing offers comprehensive plumbing solutions for both commercial and residential clients. Our expertise ranges from large-scale system installations to emergency repairs. We focus on using modern tools and techniques to provide sustainable and long-lasting plumbing solutions. ",
-       "link": "../Apply Jobs/Plumber/job2.html"
+       "link": "../Apply Jobs/plum2.html"
     }
 ]

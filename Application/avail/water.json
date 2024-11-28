@@ -8,7 +8,7 @@
       "requirements": 
         "<li>High School Graduate</li><li>Dedicated Worker</li><li>Time Management</li>",
       "small":"",
-        "link": "../Apply Jobs/Water Jobs/job1.html"
+        "link": "../Apply Jobs/water1.html"
     },
     {
         "title": "DSD Water Refilling Station",
@@ -18,7 +18,7 @@
         "description":"DSD Station is your neighborhood solution for clean and affordable water. We prioritize health and sustainability by providing mineral-balanced water in reusable, BPA-free containers. Our team is dedicated to ensuring convenience through automated refill systems, fast service, and tailored water solutions for every need. ",
         "requirements": " <li>High School Graduate</li><li>Dedicated Worker</li><li>Fast Worker</li>",
         "small":"A water refilling station is a convenient facility designed to provide clean and purified drinking water to the public.",
-        "link": "../Apply Jobs/Water Jobs/job2.html"
+        "link": "../Apply Jobs/water2.html"
       },
       {
         "title": "Dahilayan Refiling Station",
@@ -29,6 +29,6 @@
         "requirements": 
           "<li>High School Graduate</li>",
         "small":"",
-          "link": "../Apply Jobs/Water Jobs/job3.html"
+          "link": "../Apply Jobs/water3.html"
       }
   ]

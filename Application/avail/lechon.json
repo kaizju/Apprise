@@ -5,7 +5,7 @@
         "location": "Philippines",
         "salary": "P350 - P500",
         "description": "Chardz Roast is a popular chain offering delicious, slow-roasted chicken prepared with a blend of unique herbs and spices. Known for our juicy, tender meat and crispy, golden skin, we prioritize quality and freshness in every meal we serve. Our team ensures a delightful dining experience through exceptional service and meticulous food preparation.",
-        "link": "../Apply Jobs/Roast/job1.html"
+        "link": "../Apply Jobs/roast1.html"
     },
     {
         "title": "Chooks-to-Go",
@@ -13,6 +13,6 @@
         "location": "Philippines",
         "salary": "P350 - P500",
         "description": "Chooks-to-Go specializes in flame-roasted chicken that’s bursting with flavor. We take pride in using fresh, locally-sourced ingredients to create mouthwatering meals. With a focus on innovation, we provide a range of delicious sauces and sides to complement our signature chicken. ",
-        "link": "../Apply Jobs/Water Jobs/job3.html"
+        "link": "../Apply Jobs/roast2.html"
     }
 ]
