@@ -15,6 +15,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"
   ></script>
+  <link rel="stylesheet" href="">
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="./index.html" style="margin-left: 1rem">
@@ -71,12 +72,7 @@
 
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f9f9f9;
-    }
+  
 
     .main-container {
         display: flex;
@@ -88,7 +84,7 @@
         padding: 20px;
     }
 
-    .container {
+    .container1 {
         background: #fff;
         border-radius: 8px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -128,65 +124,84 @@
     }
 
     .summary-wrapper {
-        display: none;
-        /* Hidden by default */
-        position: fixed;
-margin-top: -10rem;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 10;
-    }
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
 
-    .summary-container {
-        width: 90%;
-        max-width: 600px;
-        background: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        padding: 20px;
-        position: relative;
-    }
+.summary-container {
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+    padding: 30px;
+    position: relative;
+    text-align: left;
+}
 
-    .summary-container h2 {
-        margin-bottom: 1rem;
-    }
+.summary-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center; /* Center-align the header */
+    color: #333;
+}
 
-    /* Position Back and Finish Buttons */
-    .back-btn {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        background-color: #6c757d;
-        font-size: 16px;
-        margin-top: 12rem;
-        margin-left: 32rem;
-    }
+.summary-container div {
+    margin-bottom: 15px; /* Spacing between rows */
+    font-size: 16px;
+    line-height: 1.5;
+}
 
-    .back-btn:hover {
-        background-color: #5a6268;
-    }
+.summary-container div strong {
+    font-weight: bold;
+    color: #555;
+}
 
-    .finish-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background-color: #28a745;
-        color: #fff;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 4px;
-        font-size: 16px;
-        cursor: pointer;
-    }
+.back-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
 
-    .finish-btn:hover {
-        background-color: #218838;
-    }
+.back-btn:hover {
+    background-color: #5a6268;
+}
 
+.finish-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.finish-btn:hover {
+    background-color: #218838;
+}
     .job-description {
         background: #f4f4f4;
         padding: 20px;
@@ -264,108 +279,109 @@ margin-top: -10rem;
 </head>
 
 <body>
-<div class="main-container">
-    <!-- Left Side: Form -->
-    <div class="container" id="form-container">
-        <h2>Add Your Information for Resume</h2>
-        <label for="first-name">First Name</label>
-        <input type="text" id="first-name" placeholder="Enter your first name">
-        <label for="last-name">Last Name</label>
-        <input type="text" id="last-name" placeholder="Enter your last name">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Enter your email">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" placeholder="Enter your phone number">
-        <label for="location">City, State (optional)</label>
-        <input type="text" id="location" placeholder="Enter your location">          
-       
-        <label for="education">Education</label>
-        <div id="education-section">
-            <div class="input-container">
-                <input type="text" class="education-input" placeholder="Enter your education">
-                <button class="add-btn" onclick="addEducation()">+</button><button class="remove-btn" onclick="removeEducation(this)">-</button>
-            </div>
-        </div>
-       
-        <label for="skills">Skills</label>
-        <div id="skills-section">
-            <div class="input-container">
-                <input type="text" class="skills-input" placeholder="Enter a skill">
-                <button class="add-btn" onclick="addSkill()">+</button><button class="remove-btn" onclick="removeSkill(this)">-</button>
-            </div>
-        </div>
-        
-        <label for="work-experience">Work Experience</label>
-        <div id="work-experience-section">
-            <div class="input-container">
-                <input type="text" class="work-experience-input" placeholder="Enter your work experience">
-                <button class="add-btn" onclick="addWorkExperience()">+</button><button class="remove-btn" onclick="removeWorkExperience(this)">-</button>
-            </div>
-        </div>
-        
+  <div class="container">
+    <!-- Main Content -->
+    <div class="main-container">
+      <!-- Left Side: Form -->
+      <div id="form-container" class="container1">
+        <h2 class="text-center">Add Your Information for Resume</h2>
+        <form>
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" placeholder="Enter your first name">
 
-        <button style="margin-left: 27rem;" onclick="showSummary()">Next</button>
-    </div>
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" placeholder="Enter your last name">
 
-    <!-- Right Side: Job Description -->
-    <div class="job-description">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email">
+
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="Enter your phone number">
+
+          <label for="location">City, State (optional)</label>
+          <input type="text" id="location" placeholder="Enter your location">
+
+          <!-- Add Education Section -->
+          <label for="education">Education</label>
+          <div id="education-section">
+            <div class="input-container">
+              <input type="text" class="education-input" placeholder="Enter your education">
+              <button class="add-btn" onclick="addEducation()">+</button>
+              <button class="remove-btn" onclick="removeEducation(this)">-</button>
+            </div>
+          </div>
+
+          <!-- Add Skills Section -->
+          <label for="skills">Skills</label>
+          <div id="skills-section">
+            <div class="input-container">
+              <input type="text" class="skills-input" placeholder="Enter a skill">
+              <button class="add-btn" onclick="addSkill()">+</button>
+              <button class="remove-btn" onclick="removeSkill(this)">-</button>
+            </div>
+          </div>
+
+          <!-- Add Work Experience Section -->
+          <label for="work-experience">Work Experience</label>
+          <div id="work-experience-section">
+            <div class="input-container">
+              <input type="text" class="work-experience-input" placeholder="Enter your work experience">
+              <button class="add-btn" onclick="addWorkExperience()">+</button>
+              <button class="remove-btn" onclick="removeWorkExperience(this)">-</button>
+            </div>
+          </div>
+
+          <!-- Next Button -->
+          <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="showSummary(event)">Next</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Side: Job Description -->
+      <div class="job-description">
         <h2>Job Description</h2>
-        <p><strong>Position:</strong> Software Developer</p>
-        <p><strong>Location:</strong> Remote</p>
+        <p><strong>Company:</strong> Plumbee</p>
+        <p><strong>Location:</strong> Damilag</p>
         <p>
-            We are looking for a passionate Software Developer to join our dynamic team.
-            In this role, you will be responsible for developing high-quality applications
-            that align with user needs and business goals.
+         Plumbee Plumbing offers comprehensive plumbing solutions for both commercial and residential clients. Our expertise ranges from large-scale system installations to emergency repairs. We focus on using modern tools and techniques to provide sustainable and long-lasting plumbing solutions.
         </p>
-        <p><strong>Responsibilities:</strong></p>
-        <ul>
-            <li>Design, develop, and maintain web applications.</li>
-            <li>Collaborate with cross-functional teams to define project requirements.</li>
-            <li>Write clean, scalable, and well-documented code.</li>
-            <li>Participate in code reviews and provide constructive feedback.</li>
-        </ul>
-        <p><strong>Qualifications:</strong></p>
-        <ul>
-            <li>Proven experience as a Software Developer or similar role.</li>
-            <li>Proficiency in modern programming languages like JavaScript, Python, or Java.</li>
-            <li>Strong problem-solving skills and attention to detail.</li>
-            <li>Excellent communication and teamwork abilities.</li>
-        </ul>
+      </div>
     </div>
-</div>
 
-<!-- Summary Section (Hidden by Default) -->
-<div class="summary-wrapper">
-    <div class="container summary-container" id="summary-wrapper">
-        <!-- Back Button (Top Left) -->
+    <!-- Summary Section -->
+    <div class="summary-wrapper">
+      <div class="container summary-container">
         <button class="back-btn" onclick="goBack()">Back</button>
-
-        <h2>Summary of Your Application</h2>
+        <h2 class="text-center">Summary of Your Application</h2>
         <div>
-            <strong>Name:</strong> <span id="summary-name"></span>
+          <strong>Name:</strong> <span id="summary-name"></span>
         </div>
         <div>
-            <strong>Email:</strong> <span id="summary-email"></span>
+          <strong>Email:</strong> <span id="summary-email"></span>
         </div>
         <div>
-            <strong>Phone:</strong> <span id="summary-phone"></span>
+          <strong>Phone:</strong> <span id="summary-phone"></span>
         </div>
         <div>
-            <strong>Location:</strong> <span id="summary-location"></span>
+          <strong>Location:</strong> <span id="summary-location"></span>
         </div>
         <div>
-            <strong>Education:</strong> <span id="summary-education"></span>
+          <strong>Education:</strong> <span id="summary-education"></span>
         </div>
         <div>
-            <strong>Skills:</strong> <span id="summary-skills"></span>
+          <strong>Skills:</strong> <span id="summary-skills"></span>
         </div>
         <div>
-            <strong>Work Experience:</strong> <span id="summary-work-experience"></span>
+          <strong>Work Experience:</strong> <span id="summary-work-experience"></span>
         </div>
-        <!-- Finish Button (Top Right) -->
-        <button class="finish-btn" onclick="finishApplication()">Finish</button>
+        <div class="text-center mt-4">
+          <button class="btn btn-success finish-btn" onclick="finishApplication()">Finish</button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
 <script>
@@ -416,6 +432,8 @@ margin-top: -10rem;
 
     // Function to show the summary page
     function showSummary() {
+      event.preventDefault();
+
         const firstName = document.getElementById('first-name').value;
         const lastName = document.getElementById('last-name').value;
         const email = document.getElementById('email').value;
@@ -455,7 +473,7 @@ margin-top: -10rem;
     function finishApplication() {
         alert("Thank you for your application!");
         // You can also redirect the user to another page or submit the form here
-        window.location.href = 'thank-you.html';
+        window.location.href = '/Application/index.html ';
     }
 
     // Initialize intl-tel-input
@@ -471,70 +489,64 @@ margin-top: -10rem;
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
     });
 </script>
-<footer style=" font-family: Poppins;" class="bg-dark text-white py-4">
+  
+</body>
+<footer style="margin-top: 10rem;" class="bg-dark text-white py-4">
   <div class="container">
     <div class="row">
-      <div class="col-md-3">
+      <!-- About Section -->
+      <div class="col-md-4 mb-3">
         <img
           style="width: 3rem; margin-bottom: 1rem"
           src="/Application/001-arrow-up.png"
           alt="Apprise Logo"
         />
         <p>
-          An Apprise service website connecting businesses with
-          Employee, making work collaboration more efficient.
+          An Apprise service website connecting businesses with employees,
+          making work collaboration more efficient.
         </p>
-        <ul class="social-media list-unstyled">
+        <ul class="list-unstyled d-flex gap-3">
           <li>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
           </li>
           <li>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
           </li>
           <li>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
           </li>
           <li>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
           </li>
         </ul>
       </div>
-      <div class="col-md-3">
-        <h4 style="font-family: Poppins, sans-serif;
-        font-weight: 900;
-        ">Product</h4>
-        <ul style=" font-family: Poppins, sans-serif;
-        
-       " class="list-unstyled">
+      <!-- Product Section -->
+      <div class="col-md-4 mb-3">
+        <h4 class="fw-bold">Product</h4>
+        <ul class="list-unstyled">
           <li><a style="color: white" href="#">About</a></li>
-         
         </ul>
       </div>
-      <div class="col-md-3">
-        <h4 style="font-family: Poppins, sans-serif;
-        font-weight: 900;
-        ">Support</h4>
-        <ul style=" font-family: Poppins, sans-serif;
-        font-weight: 100;
-       " class="list-unstyled">
-       
-         
+      <!-- Support Section -->
+      <div class="col-md-4 mb-3">
+        <h4 class="fw-bold">Support</h4>
+        <ul class="list-unstyled">
           <li><a style="color: white" href="#">Contact Us</a></li>
         </ul>
       </div>
-   
     </div>
+    <!-- Footer Bottom -->
     <div
-      class="footer-bottom d-flex justify-content-between align-items-center"
+      class="footer-bottom d-flex justify-content-between align-items-center mt-4"
     >
       <div class="copyright">
-        <p>&copy; 2024  Apprise.</p>
+        <p class="mb-0">&copy; 2024 Apprise.</p>
       </div>
-     
+      <div>
+       
+      </div>
     </div>
   </div>
-
 </footer>
-  
-</body>
+
 </html>

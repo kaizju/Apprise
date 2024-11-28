@@ -33,7 +33,7 @@ body {
 }
 
 /* Make the content stand out by pushing it above the overlay */
-.blog-posts .container {
+.blog-posts .container1 {
     z-index: 2; /* Ensure content is above overlay */
 }
 
@@ -188,8 +188,8 @@ footer .footer-links a {
 }
 .search-container {
     display: flex;
-    justify-content: flex-start;  /* Align to the left */
-    align-items: center;          /* Vertically center the content */
+    justify-content: flex-start; 
+    align-items: center;          
     height: 100vh;                /* Full viewport height */
     padding-left: 1rem;           /* Optional: Space from the left edge */
 }
