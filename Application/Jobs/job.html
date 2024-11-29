@@ -1,435 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://kit.fontawesome.com/f3e6dcfef4.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="../style.css" />
-    <link rel = "stylesheet" href = "https://fonts.googleapis.com/css?family=Poppins">
-    <title>Document</title>
-  </head>
-  <style>
-      .navbar {
-      background-color: black; /* Set navbar background to black */
-    }
-    .navbar .nav-link, .navbar .navbar-brand {
-      color: white !important; /* Set text color to white */
-    }
-    .navbar .nav-link:hover {
-      color: #cccccc !important; /* Optional: Light gray hover effect */
-    }
-  </style>
- <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="../index.html" style="margin-left: 1rem">
-        <img
-          src="../001-arrow-up.png"
-          alt="Apprise Logo"
-          style="width: 3rem"
-          class="d-inline-block align-text-top"
-        />
-        Apprise
-      </a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div style="margin-right: 10rem;" class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./Jobs/index.html">Find Jobs</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Info
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">About</a></li>
-              <li><a class="dropdown-item" href="#">Contact Us</a></li>
-              
-              
-            </ul>
-          </li>
-        </ul>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/f3e6dcfef4.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <title>Document</title>
+</head>
+<style>
+  .navbar {
+    background-color: black;
+    /* Set navbar background to black */
+  }
+
+  .navbar .nav-link,
+  .navbar .navbar-brand {
+    color: white !important;
+    /* Set text color to white */
+  }
+
+  .navbar .nav-link:hover {
+    color: #cccccc !important;
+    /* Optional: Light gray hover effect */
+  }
+</style>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../index.html" style="margin-left: 1rem">
+      <img src="../001-arrow-up.png" alt="Apprise Logo" style="width: 3rem" class="d-inline-block align-text-top" />
+      Apprise
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div style="margin-right: 10rem;" class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./Jobs/index.html">Find Jobs</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Info
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">About</a></li>
+            <li><a class="dropdown-item" href="#">Contact Us</a></li>
+
+
+          </ul>
+        </li>
+      </ul>
     </div>
-  </nav>
-  <body>
-    
-    <div class="upper">
+  </div>
+</nav>
+
+<body>
+
+  <div class="upper">
     <h1>Job vacancies</h1>
 
-<a href="#">Home</a> / Job vacancies
-<div style="margin-top: 2rem" class="filter">
-  <label for="education-filter">Filter by Education Level:</label>
-  <select id="education-filter">
-    <option value="all">All</option>
-    <option value="under">Undergraduate</option>
-    <option value="col">College Graduate</option>
-    <option value="senior">Senior High School Graduate</option>
-    <option value="high">High School Graduate</option>
-  </select>
-</div>
-<div style="margin-top: 2rem" class="filter">
-  <label for="location-filter">Filter by Location:</label>
-  <select id="location-filter">
-    <option value="all">All</option>
-    <option value="tank">Tankulan</option>
-    <option value="dam">Damilag</option>
-    <option value="alae">Alae</option>
-    <option value="sanmig">San Miguel</option>
-    <option value="dick">Dicklum</option>
-    <option value="dahil">Dahilayan</option>
-    <option value="cp">Camp Philips</option>
-  </select>
-</div>
-</div>
-    <div class="container my-5">
-        <h1 class="mb-4">Job Openings</h1>
-        <!-- Job 1 -->
-        <div class="profile" data-education="high" data-location="dam">
-            <div class="d-flex">
-                <img src="https://cdn-icons-png.flaticon.com/512/4497/4497450.png" style ="width: 6rem;" alt="Company Logo" class="me-3">
-                <div>
-                    <div class="job-title">DEARBC Water Refilling Station</div>
-                    <div class="job-company">DEARBC</div>
-                    <div class="job-details">DEARBC Homes | High School Graduate | Contractual</div>
-                </div>
-                <div class="ms-auto text-end">
-                    <div class="job-salary">₱450.00</div>
-                    <div class="job-posted-date">Posted on 11/16/2024</div>
-                    <a style="margin-top: 2rem" href="../Apply Jobs/water1.html" class="btn btn-primary"
-                    >Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <!-- Job 2 -->
-        <div class="profile" data-education="high" data-location="tank">
-            <div class="d-flex">
-                <img src="https://cdn-icons-png.flaticon.com/512/4497/4497450.png" style ="width: 6rem;" alt="Company Logo" class="me-3">
-                <div>
-                    <div class="job-title">DSD Water Relling Statiob</div>
-                    <div class="job-company">DSD Cooperative</div>
-                    <div class="job-details">Tankulan, Manolo Fortich | High School | Contractual</div>
-                </div>
-                <div class="ms-auto text-end">
-                    <div class="job-salary">₱350.00</div>
-                    <div class="job-posted-date">Posted on 11/16/2024</div>
-                    <a style="margin-top: 2rem" href="../Apply Jobs/water2.html" class="btn btn-primary"
-                    >Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="profile" data-education="high" data-location="dahil">
-            <div class="d-flex">
-                <img src="https://cdn-icons-png.flaticon.com/512/4497/4497450.png" style ="width: 6rem;" alt="Company Logo" class="me-3">
-                <div>
-                    <div class="job-title">Dahilayan Water Refilling</div>
-                    <div class="job-company">Dahilayan Cooperative</div>
-                    <div class="job-details">Dahilayan | High School Graduate | Contractual</div>
-                </div>
-                <div class="ms-auto text-end">
-                    <div class="job-salary">₱500.00</div>
-                    <div class="job-posted-date">Posted on 11/16/2024</div>
-                    <a style="margin-top: 2rem" href="../Apply Jobs/water3.html" class="btn btn-primary"
-                    >Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="profile" data-education="high" data-location="alae">
-            <div class="d-flex">
-                <img src="   https://cdn-icons-png.flaticon.com/512/307/307924.png "  style ="width: 6rem;"alt="Company Logo" class="me-3">
-                <div>
-                    <div class="job-title">Stack Plum</div>
-                    <div class="job-company">Plum Company</div>
-                    <div class="job-details">Alae | High School Graduate | Contractual</div>
-                </div>
-                <div class="ms-auto text-end">
-                    <div class="job-salary">₱800.00</div>
-                    <div class="job-posted-date">Posted on 11/16/2024</div>
-                    <a style="margin-top: 2rem" href="../Apply Jobs/plum1.html" class="btn btn-primary"
-                    >Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="profile" data-education="high" data-location="dam">
-            <div class="d-flex">
-                <img src="   https://cdn-icons-png.flaticon.com/512/307/307924.png "style ="width: 6rem;" alt="Company Logo" class="me-3">
-                <div>
-                    <div class="job-title">Plumbee</div>
-                    <div class="job-company">Pull Coop.</div>
-                    <div class="job-details">Damilag | High School Graduate | Contractual</div>
-                </div>
-                <div class="ms-auto text-end">
-                    <div class="job-salary">₱500.00</div>
-                    <div class="job-posted-date">Posted on 11/16/2024</div>
-                    <a style="margin-top: 2rem" href="../Apply Jobs/plum2.html" class="btn btn-primary"
-                    >Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="profile" data-education="high" data-location="tank">
-            <div class="d-flex">
-                <img src="   https://cdn-icons-png.flaticon.com/512/4664/4664916.png " style ="width: 6rem;" alt="Company Logo" class="me-3">
-                <div>
-                    <div class="job-title">Chardz Lechon Manok</div>
-                    <div class="job-company">Chardz</div>
-                    <div class="job-details">Tankulan | High School Graduate | Contractual</div>
-                </div>
-                <div class="ms-auto text-end">
-                    <div class="job-salary">₱500.00</div>
-                    <div class="job-posted-date">Posted on 11/16/2024</div>
-                    <a style="margin-top: 2rem" href="../Apply Jobs/roast1.html" class="btn btn-primary"
-                    >Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="profile"data-education="senior" data-location="cp">
-          <div class="d-flex">
-              <img src="   https://cdn-icons-png.flaticon.com/512/4664/4664916.png " style ="width: 6rem;" alt="Company Logo" class="me-3">
-              <div>
-                  <div class="job-title">Chooks-to-Go!!!</div>
-                  <div class="job-company">Chooks-to-Go.</div>
-                  <div class="job-details">Camp Philips | Senior High School Graduate | Contractual</div>
-              </div>
-              <div class="ms-auto text-end">
-                  <div class="job-salary">₱700.00</div>
-                  <div class="job-posted-date">Posted on 11/16/2024</div>
-                  <a style="margin-top: 2rem" href="../Apply Jobs/roast2.html" class="btn btn-primary"
-                  >Go somewhere</a>
-              </div>
-          </div>
-      </div>
-      <div class="profile" data-education="col" data-location="tank">
-        <div class="d-flex">
-            <img src="   https://cdn-icons-png.flaticon.com/512/307/307943.png "style ="width: 6rem;" alt="Company Logo" class="me-3">
-            <div>
-                <div class="job-title">BUSECO</div>
-                <div class="job-company">BUSECO</div>
-                <div class="job-details">Tankulan| College Graduate | Permanent</div>
-            </div>
-            <div class="ms-auto text-end">
-                <div class="job-salary">₱1,500.00</div>
-                <div class="job-posted-date">Posted on 11/16/2024</div>
-                <a style="margin-top: 2rem" href="../Apply Jobs/job1.html" class="btn btn-primary"
-                >Go somewhere</a>
-            </div>
-        </div>
+    <a href="#">Home</a> / Job vacancies
+    <div style="margin-top: 2rem" class="filter">
+      <label for="education-filter">Filter by Education Level:</label>
+      <select id="education-filter">
+        <option value="all">All</option>
+        <option value="under">Undergraduate</option>
+        <option value="col">College Graduate</option>
+        <option value="senior">Senior High School Graduate</option>
+        <option value="high">High School Graduate</option>
+      </select>
     </div>
-    <div class="profile"data-education="high" data-location="dick">
-      <div class="d-flex">
-          <img src="https://cdn-icons-png.flaticon.com/512/5637/5637272.png " style ="width: 6rem;"alt="Company Logo" class="me-3">
-          <div>
-              <div class="job-title">JnT Delivery</div>
-              <div class="job-company">JnT Company</div>
-              <div class="job-details">Dicklum | High School Graduate | Contractual</div>
-          </div>
-          <div class="ms-auto text-end">
-              <div class="job-salary">₱500.00</div>
-              <div class="job-posted-date">Posted on 11/16/2024</div>
-              <a style="margin-top: 2rem" href="../Apply Jobs/del1.html" class="btn btn-primary"
-              >Go somewhere</a>
-          </div>
-      </div>
+    <div style="margin-top: 2rem" class="filter">
+      <label for="location-filter">Filter by Location:</label>
+      <select id="location-filter">
+        <option value="all">All</option>
+        <option value="tank">Tankulan</option>
+        <option value="dam">Damilag</option>
+        <option value="alae">Alae</option>
+        <option value="sanmig">San Miguel</option>
+        <option value="dick">Dicklum</option>
+        <option value="dahil">Dahilayan</option>
+        <option value="cp">Camp Philips</option>
+      </select>
+    </div>
   </div>
-  <div class="profile"data-education="col" data-location="tank">
-    <div class="d-flex">
-        <img src="https://cdn-icons-png.flaticon.com/512/5637/5637272.png " style ="width: 6rem;" alt="Company Logo" class="me-3">
+  <div class="container my-5">
+    <h1 class="mb-4">Job Openings</h1>
+    <!-- Job 1 -->
+    <div class="profile" data-education="high" data-location="dam">
+      <div class="d-flex">
+        <img src="https://cdn-icons-png.flaticon.com/512/4497/4497450.png" style="width: 6rem;" alt="Company Logo"
+          class="me-3">
         <div>
-            <div class="job-title">LBC Delivery</div>
-            <div class="job-company">LBC</div>
-            <div class="job-details">Tankulan | College Graduate | Contractual</div>
+          <div class="job-title">DEARBC Water Refilling Station</div>
+          <div class="job-company">DEARBC</div>
+          <div class="job-details">DEARBC Homes | High School Graduate | Contractual</div>
         </div>
         <div class="ms-auto text-end">
-            <div class="job-salary">₱600.00</div>
-            <div class="job-posted-date">Posted on 11/16/2024</div>
-            <a style="margin-top: 2rem" href="../Apply Jobs/del2.html" class="btn btn-primary"
-            >Go somewhere</a>
+          <div class="job-salary">₱450.00</div>
+          <div class="job-posted-date">Posted on 11/16/2024</div>
+          <a style="margin-top: 2rem" href="../Apply Jobs/water1.html" class="btn btn-primary">Go somewhere</a>
         </div>
+      </div>
     </div>
-</div>
-<div class="profile"data-education="high" data-location="sanmig">
-  <div class="d-flex">
-      <img src="https://cdn-icons-png.flaticon.com/512/5637/5637272.png " style ="width: 6rem;" alt="Company Logo" class="me-3">
-      <div>
+    <!-- Job 2 -->
+    <div class="profile" data-education="high" data-location="tank">
+      <div class="d-flex">
+        <img src="https://cdn-icons-png.flaticon.com/512/4497/4497450.png" style="width: 6rem;" alt="Company Logo"
+          class="me-3">
+        <div>
+          <div class="job-title">DSD Water Relling Statiob</div>
+          <div class="job-company">DSD Cooperative</div>
+          <div class="job-details">Tankulan, Manolo Fortich | High School | Contractual</div>
+        </div>
+        <div class="ms-auto text-end">
+          <div class="job-salary">₱350.00</div>
+          <div class="job-posted-date">Posted on 11/16/2024</div>
+          <a style="margin-top: 2rem" href="../Apply Jobs/water2.html" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile" data-education="high" data-location="dahil">
+      <div class="d-flex">
+        <img src="https://cdn-icons-png.flaticon.com/512/4497/4497450.png" style="width: 6rem;" alt="Company Logo"
+          class="me-3">
+        <div>
+          <div class="job-title">Dahilayan Water Refilling</div>
+          <div class="job-company">Dahilayan Cooperative</div>
+          <div class="job-details">Dahilayan | High School Graduate | Contractual</div>
+        </div>
+        <div class="ms-auto text-end">
+          <div class="job-salary">₱500.00</div>
+          <div class="job-posted-date">Posted on 11/16/2024</div>
+          <a style="margin-top: 2rem" href="../Apply Jobs/water3.html" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile" data-education="high" data-location="alae">
+      <div class="d-flex">
+        <img src="   https://cdn-icons-png.flaticon.com/512/307/307924.png " style="width: 6rem;" alt="Company Logo"
+          class="me-3">
+        <div>
+          <div class="job-title">Stack Plum</div>
+          <div class="job-company">Plum Company</div>
+          <div class="job-details">Alae | High School Graduate | Contractual</div>
+        </div>
+        <div class="ms-auto text-end">
+          <div class="job-salary">₱800.00</div>
+          <div class="job-posted-date">Posted on 11/16/2024</div>
+          <a style="margin-top: 2rem" href="../Apply Jobs/plum1.html" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile" data-education="high" data-location="dam">
+      <div class="d-flex">
+        <img src="   https://cdn-icons-png.flaticon.com/512/307/307924.png " style="width: 6rem;" alt="Company Logo"
+          class="me-3">
+        <div>
+          <div class="job-title">Plumbee</div>
+          <div class="job-company">Pull Coop.</div>
+          <div class="job-details">Damilag | High School Graduate | Contractual</div>
+        </div>
+        <div class="ms-auto text-end">
+          <div class="job-salary">₱500.00</div>
+          <div class="job-posted-date">Posted on 11/16/2024</div>
+          <a style="margin-top: 2rem" href="../Apply Jobs/plum2.html" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile" data-education="high" data-location="tank">
+      <div class="d-flex">
+        <img src="   https://cdn-icons-png.flaticon.com/512/4664/4664916.png " style="width: 6rem;" alt="Company Logo"
+          class="me-3">
+        <div>
+          <div class="job-title">Chardz Lechon Manok</div>
+          <div class="job-company">Chardz</div>
+          <div class="job-details">Tankulan | High School Graduate | Contractual</div>
+        </div>
+        <div class="ms-auto text-end">
+          <div class="job-salary">₱500.00</div>
+          <div class="job-posted-date">Posted on 11/16/2024</div>
+          <a style="margin-top: 2rem" href="../Apply Jobs/roast1.html" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile" data-education="senior" data-location="cp">
+      <div class="d-flex">
+        <img src="   https://cdn-icons-png.flaticon.com/512/4664/4664916.png " style="width: 6rem;" alt="Company Logo"
+          class="me-3">
+        <div>
+          <div class="job-title">Chooks-to-Go!!!</div>
+          <div class="job-company">Chooks-to-Go.</div>
+          <div class="job-details">Camp Philips | Senior High School Graduate | Contractual</div>
+        </div>
+        <div class="ms-auto text-end">
+          <div class="job-salary">₱700.00</div>
+          <div class="job-posted-date">Posted on 11/16/2024</div>
+          <a style="margin-top: 2rem" href="../Apply Jobs/roast2.html" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile" data-education="col" data-location="tank">
+      <div class="d-flex">
+        <img src="   https://cdn-icons-png.flaticon.com/512/307/307943.png " style="width: 6rem;" alt="Company Logo"
+          class="me-3">
+        <div>
+          <div class="job-title">BUSECO</div>
+          <div class="job-company">BUSECO</div>
+          <div class="job-details">Tankulan| College Graduate | Permanent</div>
+        </div>
+        <div class="ms-auto text-end">
+          <div class="job-salary">₱1,500.00</div>
+          <div class="job-posted-date">Posted on 11/16/2024</div>
+          <a style="margin-top: 2rem" href="../Apply Jobs/job1.html" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile" data-education="high" data-location="dick">
+      <div class="d-flex">
+        <img src="https://cdn-icons-png.flaticon.com/512/5637/5637272.png " style="width: 6rem;" alt="Company Logo"
+          class="me-3">
+        <div>
+          <div class="job-title">JnT Delivery</div>
+          <div class="job-company">JnT Company</div>
+          <div class="job-details">Dicklum | High School Graduate | Contractual</div>
+        </div>
+        <div class="ms-auto text-end">
+          <div class="job-salary">₱500.00</div>
+          <div class="job-posted-date">Posted on 11/16/2024</div>
+          <a style="margin-top: 2rem" href="../Apply Jobs/del1.html" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile" data-education="col" data-location="tank">
+      <div class="d-flex">
+        <img src="https://cdn-icons-png.flaticon.com/512/5637/5637272.png " style="width: 6rem;" alt="Company Logo"
+          class="me-3">
+        <div>
+          <div class="job-title">LBC Delivery</div>
+          <div class="job-company">LBC</div>
+          <div class="job-details">Tankulan | College Graduate | Contractual</div>
+        </div>
+        <div class="ms-auto text-end">
+          <div class="job-salary">₱600.00</div>
+          <div class="job-posted-date">Posted on 11/16/2024</div>
+          <a style="margin-top: 2rem" href="../Apply Jobs/del2.html" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile" data-education="high" data-location="sanmig">
+      <div class="d-flex">
+        <img src="https://cdn-icons-png.flaticon.com/512/5637/5637272.png " style="width: 6rem;" alt="Company Logo"
+          class="me-3">
+        <div>
           <div class="job-title">Express Ways</div>
           <div class="job-company">Express Association.</div>
           <div class="job-details">San Miguel | High School Graduate | Contractual</div>
-      </div>
-      <div class="ms-auto text-end">
+        </div>
+        <div class="ms-auto text-end">
           <div class="job-salary">₱500.00</div>
           <div class="job-posted-date">Posted on 11/16/2024</div>
-          <a style="margin-top: 2rem" href="../Apply Jobs/del3.html" class="btn btn-primary"
-          >Go somewhere</a>
+          <a style="margin-top: 2rem" href="../Apply Jobs/del3.html" class="btn btn-primary">Go somewhere</a>
+        </div>
       </div>
-  </div>
-</div>
-<div class="profile"data-education="high" data-location="dam">
-  <div class="d-flex">
-      <img src="   https://cdn-icons-png.flaticon.com/512/2702/2702300.png " style ="width: 6rem;" alt="Company Logo" class="me-3">
-      <div>
+    </div>
+    <div class="profile" data-education="high" data-location="dam">
+      <div class="d-flex">
+        <img src="   https://cdn-icons-png.flaticon.com/512/2702/2702300.png " style="width: 6rem;" alt="Company Logo"
+          class="me-3">
+        <div>
           <div class="job-title">De La Cruz Capentry</div>
           <div class="job-company">PHARV</div>
           <div class="job-details">Damilag | High School Graduate | Contractual</div>
-      </div>
-      <div class="ms-auto text-end">
+        </div>
+        <div class="ms-auto text-end">
           <div class="job-salary">₱3500.00</div>
           <div class="job-posted-date">Posted on 11/16/2024</div>
-          <a style="margin-top: 2rem" href="../Apply Jobs/carp1.html" class="btn btn-primary"
-          >Go somewhere</a>
+          <a style="margin-top: 2rem" href="../Apply Jobs/carp1.html" class="btn btn-primary">Go somewhere</a>
+        </div>
       </div>
-  </div>
-</div>
-<div class="profile"data-education="senior" data-location="dam">
-  <div class="d-flex">
-      <img src="   https://cdn-icons-png.flaticon.com/512/2702/2702300.png " style ="width: 6rem;" alt="Company Logo" class="me-3">
-      <div>
+    </div>
+    <div class="profile" data-education="senior" data-location="dam">
+      <div class="d-flex">
+        <img src="   https://cdn-icons-png.flaticon.com/512/2702/2702300.png " style="width: 6rem;" alt="Company Logo"
+          class="me-3">
+        <div>
           <div class="job-title">DokDok Carps</div>
           <div class="job-company">Dok Carpentry Company</div>
           <div class="job-details">Damilag | Senior High School Graduate | Contractual</div>
-      </div>
-      <div class="ms-auto text-end">
+        </div>
+        <div class="ms-auto text-end">
           <div class="job-salary">₱400.00</div>
           <div class="job-posted-date">Posted on 11/16/2024</div>
-          <a style="margin-top: 2rem" href="../Apply Jobs/carp2.html" class="btn btn-primary"
-          >Go somewhere</a>
-      </div>
-  </div>
-</div>
-
-
-    </div>
-    <footer style=" font-family: Poppins;" class="bg-dark text-white py-4">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <img
-              style="width: 3rem; margin-bottom: 1rem"
-              src="../001-arrow-up.png"
-              alt="Apprise Logo"
-            />
-            <p>
-              An Apprise service website connecting businesses with
-              Employee, making work collaboration more efficient.
-            </p>
-            <ul class="social-media list-unstyled">
-              <li>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-3">
-            <h4 style="font-family: Poppins, sans-serif;
-            font-weight: 900;
-            ">Product</h4>
-            <ul style=" font-family: Poppins, sans-serif;
-            
-           " class="list-unstyled">
-              <li><a style="color: white" href="#">About</a></li>
-             
-            </ul>
-          </div>
-          <div class="col-md-3">
-            <h4 style="font-family: Poppins, sans-serif;
-            font-weight: 900;
-            ">Support</h4>
-            <ul style=" font-family: Poppins, sans-serif;
-            font-weight: 100;
-           " class="list-unstyled">
-              <li><a style="color: white" href="#">How It Works</a></li>
-             
-              <li><a style="color: white" href="#">Contact Us</a></li>
-            </ul>
-          </div>
-       
+          <a style="margin-top: 2rem" href="../Apply Jobs/carp2.html" class="btn btn-primary">Go somewhere</a>
         </div>
-        <div
-          class="footer-bottom d-flex justify-content-between align-items-center"
-        >
-          <div class="copyright">
-            <p>&copy; 2024  Apprise.</p>
-          </div>
-          <ul class="footer-links list-unstyled d-flex mb-0">
-            <li><a style="color: white" href="">Terms</a></li>
-            <li><a style="color: white" href="#">Privacy</a></li>
-            <li><a style="color: white" href="#">Sitemap</a></li>
+      </div>
+    </div>
+
+
+  </div>
+  <footer style=" font-family: Poppins;" class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <img style="width: 3rem; margin-bottom: 1rem" src="../001-arrow-up.png" alt="Apprise Logo" />
+          <p>
+            An Apprise service website connecting businesses with
+            Employee, making work collaboration more efficient.
+          </p>
+          <ul class="social-media list-unstyled">
+            <li>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </li>
           </ul>
         </div>
+        <div class="col-md-3">
+          <h4 style="font-family: Poppins, sans-serif;
+            font-weight: 900;
+            ">Product</h4>
+          <ul style=" font-family: Poppins, sans-serif;
+            
+           " class="list-unstyled">
+            <li><a style="color: white" href="#">About</a></li>
+
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h4 style="font-family: Poppins, sans-serif;
+            font-weight: 900;
+            ">Support</h4>
+          <ul style=" font-family: Poppins, sans-serif;
+            font-weight: 100;
+           " class="list-unstyled">
+            <li><a style="color: white" href="#">How It Works</a></li>
+
+            <li><a style="color: white" href="#">Contact Us</a></li>
+          </ul>
+        </div>
+
       </div>
+      <div class="footer-bottom d-flex justify-content-between align-items-center">
+        <div class="copyright">
+          <p>&copy; 2024 Apprise.</p>
+        </div>
+        <ul class="footer-links list-unstyled d-flex mb-0">
+          <li><a style="color: white" href="">Terms</a></li>
+          <li><a style="color: white" href="#">Privacy</a></li>
+          <li><a style="color: white" href="#">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
 
-    </footer>
-      <script>
-          function filterProfiles() {
-      const educationFilter = document.getElementById('education-filter').value;
-      const locationFilter = document.getElementById('location-filter').value;
-      const profiles = document.querySelectorAll('.profile');
+  </footer>
+  <script>
+    class ProfileFilter {
+      constructor(educationFilterId, locationFilterId, profileSelector) {
+        this.educationFilter = document.getElementById(educationFilterId);
+        this.locationFilter = document.getElementById(locationFilterId);
+        this.profiles = document.querySelectorAll(profileSelector);
 
-      profiles.forEach(profile => {
-        const education = profile.getAttribute('data-education');
-        const location = profile.getAttribute('data-location');
+        this.addEventListeners();
+        this.filterProfiles(); // Apply initial filter on page load
+      }
 
-        // Determine if the profile matches both filters
-        const matchesEducation = educationFilter === 'all' || education === educationFilter;
-        const matchesLocation = locationFilter === 'all' || location === locationFilter;
+      // Add event listeners to the filter elements
+      addEventListeners() {
+        this.educationFilter.addEventListener('change', () => this.filterProfiles());
+        this.locationFilter.addEventListener('change', () => this.filterProfiles());
+      }
 
-        // Show the profile if it matches both filters
-        if (matchesEducation && matchesLocation) {
-          profile.classList.add('visible');
-          profile.classList.remove('hidden');
-        } else {
-          profile.classList.add('hidden');
-          setTimeout(() => {
-            profile.classList.remove('visible');
-          }, 500); // Match CSS transition duration
-        }
-      });
+      // The method to filter profiles based on selected filters
+      filterProfiles() {
+        const educationFilterValue = this.educationFilter.value;
+        const locationFilterValue = this.locationFilter.value;
+
+        this.profiles.forEach(profile => {
+          const education = profile.getAttribute('data-education');
+          const location = profile.getAttribute('data-location');
+
+          const matchesEducation = educationFilterValue === 'all' || education === educationFilterValue;
+          const matchesLocation = locationFilterValue === 'all' || location === locationFilterValue;
+
+          if (matchesEducation && matchesLocation) {
+            this.showProfile(profile);
+          } else {
+            this.hideProfile(profile);
+          }
+        });
+      }
+
+      // Show the profile with appropriate CSS classes
+      showProfile(profile) {
+        profile.classList.add('visible');
+        profile.classList.remove('hidden');
+      }
+
+      // Hide the profile with appropriate CSS classes
+      hideProfile(profile) {
+        profile.classList.add('hidden');
+        setTimeout(() => {
+          profile.classList.remove('visible');
+        }, 500); // Match CSS transition duration
+      }
     }
 
-    // Attach event listeners to both filters
-    document.getElementById('education-filter').addEventListener('change', filterProfiles);
-    document.getElementById('location-filter').addEventListener('change', filterProfiles);
+    // Initialize the ProfileFilter class
+    const profileFilter = new ProfileFilter('education-filter', 'location-filter', '.profile');
 
-    // Trigger initial filter to show all profiles by default
-    filterProfiles();
-      </script>
-  </body>
+  </script>
+</body>
+
 </html>

@@ -280,65 +280,54 @@
 
 <body>
   <div class="container">
-    <!-- Main Content -->
     <div class="main-container">
-      <!-- Left Side: Form -->
       <div id="form-container" class="container1">
         <h2 class="text-center">Add Your Information for Resume</h2>
         <form>
           <label for="first-name">First Name</label>
           <input type="text" id="first-name" placeholder="Enter your first name">
-
           <label for="last-name">Last Name</label>
           <input type="text" id="last-name" placeholder="Enter your last name">
-
           <label for="email">Email</label>
           <input type="email" id="email" placeholder="Enter your email">
-
           <label for="phone">Phone Number</label>
           <input type="tel" id="phone" placeholder="Enter your phone number">
-
           <label for="location">City, State (optional)</label>
           <input type="text" id="location" placeholder="Enter your location">
 
-          <!-- Add Education Section -->
           <label for="education">Education</label>
           <div id="education-section">
             <div class="input-container">
               <input type="text" class="education-input" placeholder="Enter your education">
-              <button class="add-btn" onclick="addEducation()">+</button>
-              <button class="remove-btn" onclick="removeEducation(this)">-</button>
+              <button class="add-btn" type="button" onclick="app.addEducation()">+</button>
+              <button class="remove-btn" type="button" onclick="app.removeEducation(this)">-</button>
             </div>
           </div>
 
-          <!-- Add Skills Section -->
           <label for="skills">Skills</label>
           <div id="skills-section">
             <div class="input-container">
               <input type="text" class="skills-input" placeholder="Enter a skill">
-              <button class="add-btn" onclick="addSkill()">+</button>
-              <button class="remove-btn" onclick="removeSkill(this)">-</button>
+              <button class="add-btn" type="button" onclick="app.addSkill()">+</button>
+              <button class="remove-btn" type="button" onclick="app.removeSkill(this)">-</button>
             </div>
           </div>
 
-          <!-- Add Work Experience Section -->
           <label for="work-experience">Work Experience</label>
           <div id="work-experience-section">
             <div class="input-container">
               <input type="text" class="work-experience-input" placeholder="Enter your work experience">
-              <button class="add-btn" onclick="addWorkExperience()">+</button>
-              <button class="remove-btn" onclick="removeWorkExperience(this)">-</button>
+              <button class="add-btn" type="button" onclick="app.addWorkExperience()">+</button>
+              <button class="remove-btn" type="button" onclick="app.removeWorkExperience(this)">-</button>
             </div>
           </div>
 
-          <!-- Next Button -->
           <div class="text-center mt-4">
-            <button class="btn btn-primary" onclick="showSummary(event)">Next</button>
+            <button class="btn btn-primary" type="button" onclick="app.showSummary(event)">Next</button>
           </div>
         </form>
       </div>
 
-      <!-- Right Side: Job Description -->
       <div class="job-description">
         <h2>Job Description</h2>
         <p><strong>Company:</strong> DEARBC Water Refilling Station</p>
@@ -349,145 +338,115 @@
       </div>
     </div>
 
-    <!-- Summary Section -->
     <div class="summary-wrapper">
       <div class="container summary-container">
-        <button class="back-btn" onclick="goBack()">Back</button>
+        <button class="back-btn" onclick="app.goBack()">Back</button>
         <h2 class="text-center">Summary of Your Application</h2>
-        <div>
-          <strong>Name:</strong> <span id="summary-name"></span>
-        </div>
-        <div>
-          <strong>Email:</strong> <span id="summary-email"></span>
-        </div>
-        <div>
-          <strong>Phone:</strong> <span id="summary-phone"></span>
-        </div>
-        <div>
-          <strong>Location:</strong> <span id="summary-location"></span>
-        </div>
-        <div>
-          <strong>Education:</strong> <span id="summary-education"></span>
-        </div>
-        <div>
-          <strong>Skills:</strong> <span id="summary-skills"></span>
-        </div>
-        <div>
-          <strong>Work Experience:</strong> <span id="summary-work-experience"></span>
-        </div>
+        <div><strong>Name:</strong> <span id="summary-name"></span></div>
+        <div><strong>Email:</strong> <span id="summary-email"></span></div>
+        <div><strong>Phone:</strong> <span id="summary-phone"></span></div>
+        <div><strong>Location:</strong> <span id="summary-location"></span></div>
+        <div><strong>Education:</strong> <span id="summary-education"></span></div>
+        <div><strong>Skills:</strong> <span id="summary-skills"></span></div>
+        <div><strong>Work Experience:</strong> <span id="summary-work-experience"></span></div>
         <div class="text-center mt-4">
-          <button class="btn btn-success finish-btn" onclick="finishApplication()">Finish</button>
+          <button class="btn btn-success finish-btn" onclick="app.finishApplication()">Finish</button>
         </div>
       </div>
     </div>
   </div>
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
 <script>
-    // Function to add a new education input field
-    function addEducation() {
-        const educationSection = document.getElementById('education-section');
-        const newInput = document.createElement('div');
-        newInput.classList.add('input-container');
-        newInput.innerHTML = `<input type="text" class="education-input" placeholder="Enter your education">
-                              <button class="remove-btn" onclick="removeEducation(this)">-</button>`;
-        educationSection.appendChild(newInput);
+  class FormHandler {
+    constructor() {
+      this.phoneInput = document.querySelector("#phone");
+      this.initializePhoneInput();
     }
 
-    // Function to remove an education input field
-    function removeEducation(button) {
-        button.parentElement.remove();
-    }
-
-    // Function to add a new skill input field
-    function addSkill() {
-        const skillsSection = document.getElementById('skills-section');
-        const newInput = document.createElement('div');
-        newInput.classList.add('input-container');
-        newInput.innerHTML = `<input type="text" class="skills-input" placeholder="Enter a skill">
-                              <button class="remove-btn" onclick="removeSkill(this)">-</button>`;
-        skillsSection.appendChild(newInput);
-    }
-
-    // Function to remove a skill input field
-    function removeSkill(button) {
-        button.parentElement.remove();
-    }
-
-    // Function to add a new work experience input field
-    function addWorkExperience() {
-        const workExperienceSection = document.getElementById('work-experience-section');
-        const newInput = document.createElement('div');
-        newInput.classList.add('input-container');
-        newInput.innerHTML = `<input type="text" class="work-experience-input" placeholder="Enter your work experience">
-                              <button class="remove-btn" onclick="removeWorkExperience(this)">-</button>`;
-        workExperienceSection.appendChild(newInput);
-    }
-
-    // Function to remove work experience input field
-    function removeWorkExperience(button) {
-        button.parentElement.remove();
-    }
-
-    // Function to show the summary page
-    function showSummary() {
-      event.preventDefault();
-
-        const firstName = document.getElementById('first-name').value;
-        const lastName = document.getElementById('last-name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const location = document.getElementById('location').value;
-        const education = Array.from(document.querySelectorAll('.education-input')).map(input => input.value).join(', ');
-        const skills = Array.from(document.querySelectorAll('.skills-input')).map(input => input.value).join(', ');
-        const workExperience = Array.from(document.querySelectorAll('.work-experience-input')).map(input => input.value).join(', ');
-
-        // Populate the summary section
-        document.getElementById('summary-name').textContent = `${firstName} ${lastName}`;
-        document.getElementById('summary-email').textContent = email;
-        document.getElementById('summary-phone').textContent = phone;
-        document.getElementById('summary-location').textContent = location;
-        document.getElementById('summary-education').textContent = education;
-        document.getElementById('summary-skills').textContent = skills;
-        document.getElementById('summary-work-experience').textContent = workExperience;
-
-        // Hide the form and job description
-        document.getElementById('form-container').style.display = 'none';
-        document.querySelector('.job-description').style.display = 'none';
-
-        // Show the summary wrapper
-        document.querySelector('.summary-wrapper').style.display = 'flex';
-    }
-
-    // Function to go back to the form
-    function goBack() {
-        document.getElementById('form-container').style.display = 'block';
-        document.querySelector('.job-description').style.display = 'block';
-
-        // Hide the summary wrapper
-        document.querySelector('.summary-wrapper').style.display = 'none';
-    }
-
-    // Function to finish the application
-    function finishApplication() {
-        alert("Thank you for your application!");
-        // You can also redirect the user to another page or submit the form here
-        window.location.href = '/Application/index.html ';
-    }
-
-    // Initialize intl-tel-input
-    const phoneInput = document.querySelector("#phone");
-    intlTelInput(phoneInput, {
+    initializePhoneInput() {
+      intlTelInput(this.phoneInput, {
         initialCountry: "auto",
         geoIpLookup: function (success, failure) {
-            fetch("https://ipinfo.io/json?token=YOUR_TOKEN_HERE") // Replace YOUR_TOKEN_HERE with your IPInfo token
-                .then((resp) => resp.json())
-                .then((resp) => success(resp.country))
-                .catch(() => success("us"));
+          fetch("https://ipinfo.io/json?token=YOUR_TOKEN_HERE")
+            .then((resp) => resp.json())
+            .then((resp) => success(resp.country))
+            .catch(() => success("us"));
         },
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
-    });
+      });
+    }
+
+    addEducation() {
+      this.addInputField('education-input', 'education-section');
+    }
+
+    removeEducation(button) {
+      this.removeInputField(button);
+    }
+
+    addSkill() {
+      this.addInputField('skills-input', 'skills-section');
+    }
+
+    removeSkill(button) {
+      this.removeInputField(button);
+    }
+
+    addWorkExperience() {
+      this.addInputField('work-experience-input', 'work-experience-section');
+    }
+
+    removeWorkExperience(button) {
+      this.removeInputField(button);
+    }
+
+    addInputField(inputClass, sectionId) {
+      const section = document.getElementById(sectionId);
+      const inputContainer = document.createElement("div");
+      inputContainer.classList.add("input-container");
+      inputContainer.innerHTML = `
+        <input type="text" class="${inputClass}" placeholder="Enter your input">
+        <button class="add-btn" type="button" onclick="app.addInputField('${inputClass}', '${sectionId}')">+</button>
+        <button class="remove-btn" type="button" onclick="app.removeInputField(this)">-</button>
+      `;
+      section.appendChild(inputContainer);
+    }
+
+    removeInputField(button) {
+      button.parentElement.remove();
+    }
+
+    showSummary(event) {
+      event.preventDefault();
+      document.getElementById("summary-name").textContent = document.getElementById("first-name").value + ' ' + document.getElementById("last-name").value;
+      document.getElementById("summary-email").textContent = document.getElementById("email").value;
+      document.getElementById("summary-phone").textContent = document.getElementById("phone").value;
+      document.getElementById("summary-location").textContent = document.getElementById("location").value;
+      document.getElementById("summary-education").textContent = this.getInputValues('education-input');
+      document.getElementById("summary-skills").textContent = this.getInputValues('skills-input');
+      document.getElementById("summary-work-experience").textContent = this.getInputValues('work-experience-input');
+
+      document.querySelector(".container1").style.display = "none";
+      document.querySelector(".summary-wrapper").style.display = "block";
+    }
+
+    getInputValues(inputClass) {
+      const inputs = document.querySelectorAll(`.${inputClass}`);
+      return Array.from(inputs).map(input => input.value).join(", ");
+    }
+
+    goBack() {
+      document.querySelector(".container1").style.display = "block";
+      document.querySelector(".summary-wrapper").style.display = "none";
+    }
+
+    finishApplication() {
+      alert("Your application has been submitted!");
+    }
+  }
+
+  const app = new FormHandler();
 </script>
   
 </body>

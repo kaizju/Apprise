@@ -163,73 +163,109 @@
     </div>
     <script>
  document.addEventListener("DOMContentLoaded", () => {
-  class AppletCard {
-    constructor(t, d, l, e, c, s, r, ga) {
-      this.title = t || "No Title Available";
-      this.company = c || "Unknown Company";
-      this.description = d || "No Description Available";
-      this.link = l || "#";
-      this.location = e || "Location Not Specified";
-      this.salary = s || "Salary Not Specified";
-      this.requirements = r || "Requirements Not Specified";
-      this.small = ga || "No Additional Information";
-    }
 
-    createCard() {
-      const card = document.createElement("div");
-      card.className = "card applet-card mb-3";
-      card.innerHTML = `
-        <div class="card-body">
-            <h3>${this.title}</h3>
-            <h5>${this.company}</h5>
-            <p><strong>Location:</strong> ${this.location}</p>
-            <p><strong>Salary:</strong> ${this.salary}</p>
-            <p>${this.description}</p>
-            <p><strong>Requirements:</strong> ${this.requirements}</p>
-            <a href="${this.link}" class="btn btn-primary">Apply Now</a>
-        </div>`;
-      return card;
+// Class to represent an individual Applet Card
+class AppletCard {
+  constructor(t, d, l, e, c, s, r, ga) {
+    this.title = t || "No Title Available";
+    this.company = c || "Unknown Company";
+    this.description = d || "No Description Available";
+    this.link = l || "#";
+    this.location = e || "Location Not Specified";
+    this.salary = s || "Salary Not Specified";
+    this.requirements = r || "Requirements Not Specified";
+    this.small = ga || "No Additional Information";
+  }
+
+  createCard() {
+    const card = document.createElement("div");
+    card.className = "card applet-card mb-3";
+    card.innerHTML = `
+      <div class="card-body">
+          <h3>${this.title}</h3>
+          <h5>${this.company}</h5>
+          <p><strong>Location:</strong> ${this.location}</p>
+          <p><strong>Salary:</strong> ${this.salary}</p>
+          <p>${this.description}</p>
+          <p><strong>Requirements:</strong> ${this.requirements}</p>
+          <a href="${this.link}" class="btn btn-primary">Apply Now</a>
+      </div>`;
+    return card;
+  }
+}
+
+// Class for rendering applet data
+class AppletRenderer {
+  constructor(containerId) {
+    this.container = document.getElementById(containerId);
+  }
+
+  fetchAppletData(url) {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => this.renderApplets(data))
+      .catch((err) => console.error("Error loading applet data:", err));
+  }
+
+  renderApplets(data) {
+    this.container.innerHTML = "";
+
+    data.forEach((applet) => {
+      const card = new AppletCard(
+        applet.title,
+        applet.description,
+        applet.link,
+        applet.location,
+        applet.company,
+        applet.salary,
+        applet.requirements,
+        applet.small
+      );
+      this.container.appendChild(card.createCard());
+    });
+  }
+}
+
+// Class to handle search and results filtering
+class SearchHandler {
+  constructor(searchInputId, resultsContainerId) {
+    this.searchInput = document.getElementById(searchInputId);
+    this.resultsContainer = document.getElementById(resultsContainerId);
+  }
+
+  // Handles the search functionality and redirects accordingly
+  handleSearch(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      const query = this.searchInput.value.trim().toLowerCase();
+      if (query) {
+        this.redirectBasedOnQuery(query);
+      }
     }
   }
 
-  class AppletRenderer {
-    constructor(id) {
-      this.container = document.getElementById(id);
-    }
-
-    fetchAppletData(url) {
-      fetch(url)
-        .then((res) => res.json())
-        .then((data) => this.renderApplets(data))
-        .catch((err) => console.error("Error loading applet data:", err));
-    }
-
-    renderApplets(data) {
-      this.container.innerHTML = "";
-
-      data.forEach((applet) => {
-        const card = new AppletCard(
-          applet.title,
-          applet.description,
-          applet.link,
-          applet.location,
-          applet.company,
-          applet.salary,
-          applet.requirements,
-          applet.small
-        );
-        this.container.appendChild(card.createCard());
-      });
+  // Redirects to different pages based on the search query
+  redirectBasedOnQuery(query) {
+    if (query.includes("carp")) {
+      window.location.href = `../avail/carp.html?query=${encodeURIComponent(query)}`;
+    } else if (query.includes("water refilling")) {
+      window.location.href = `../avail/water.html?query=${encodeURIComponent(query)}`;
+    } else if (query.includes("tubero")) {
+      window.location.href = `../avail/plumber.html?query=${encodeURIComponent(query)}`;
+    } else if (query.includes("lechonero")) {
+      window.location.href = `../avail/lechon.html?query=${encodeURIComponent(query)}`;
+    } else if (query.includes("electrical maintenance")) {
+      window.location.href = `../avail/elec.html?query=${encodeURIComponent(query)}`;
+    } else if (query.includes("delivery man")) {
+      window.location.href = `../avail/delivery.html?query=${encodeURIComponent(query)}`;
     }
   }
 
-  const appletRenderer = new AppletRenderer("details");
-  const resultsContainer = document.getElementById("results");
-
-  function renderResults(data) {
-    resultsContainer.innerHTML = "";
+  // Renders search results based on the data
+  renderResults(data) {
+    this.resultsContainer.innerHTML = "";
     if (!data.length) {
-      resultsContainer.innerHTML = `<p class="no-result">No results found...</p>`;
+      this.resultsContainer.innerHTML = `<p class="no-result">No results found...</p>`;
       return;
     }
 
@@ -238,7 +274,7 @@
       resultItem.className = "result-item list-group-item list-group-item-action";
 
       const logo = document.createElement("img");
-      logo.src = "   https://cdn-icons-png.flaticon.com/512/4664/4664916.png "; // Placeholder logo
+      logo.src = "https://cdn-icons-png.flaticon.com/512/4664/4664916.png"; // Placeholder logo
       logo.alt = `${item.title} Logo`;
       logo.className = "logo";
       logo.style.width = "50px";
@@ -253,70 +289,42 @@
       resultItem.appendChild(logo);
       resultItem.appendChild(document.createTextNode(item.title));
       resultItem.appendChild(smallDescription);
-      resultItem.onclick = () => appletRenderer.renderApplets([item]);
-      resultsContainer.appendChild(resultItem);
+      resultItem.onclick = () => new AppletRenderer("details").renderApplets([item]);
+      this.resultsContainer.appendChild(resultItem);
     });
   }
 
-  fetch("lechon.json")
-    .then((res) => {
-      if (!res.ok) throw new Error("Failed to fetch data");
-      return res.json();
-    })
-    .then(renderResults)
-    .catch((err) => {
-      console.error("Error fetching data:", err);
-      resultsContainer.innerHTML = `<p class="no-result">Failed to load results. Please try again later.</p>`;
-    });
-
-  appletRenderer.fetchAppletData("water.json");
-
-  document.getElementById("search").addEventListener("keypress", redirectToSearch);
-
-function redirectToSearch(event) {
-  if (event.key === "Enter") { // Redirect only on pressing Enter
-    event.preventDefault();
-    const query = document.getElementById("search").value.trim().toLowerCase();
-    if (query) {
-      // Logic to decide the redirection URL
-       if (query.includes("carp")) {
-        // Redirect to avail/carp page if the query relates to carpentry
-        window.location.href = `../avail/carp.html?query=${encodeURIComponent(query)}`;
-      }else if (query.includes("water refilling")) {
-        // Redirect to avail/carp page if the query relates to carpentry
-        window.location.href = `../avail/water.html?query=${encodeURIComponent(query)}`;
-      }else if (query.includes("tubero")) {
-        // Redirect to avail/carp page if the query relates to carpentry
-        window.location.href = `../avail/plumber.html?query=${encodeURIComponent(query)}`;
-      }else if (query.includes("lechonero")) {
-        // Redirect to avail/carp page if the query relates to carpentry
-        window.location.href = `../avail/lechon.html?query=${encodeURIComponent(query)}`;
-      }else if (query.includes("electrical maintenance")) {
-        // Redirect to avail/carp page if the query relates to carpentry
-        window.location.href = `../avail/elec.html?query=${encodeURIComponent(query)}`;
-      }
-      else if (query.includes("delivery man")) {
-        // Redirect to avail/carp page if the query relates to carpentry
-        window.location.href = `../avail/delivery.html?query=${encodeURIComponent(query)}`;
-      }
-    }
+  // Fetch search data and handle rendering
+  fetchSearchData(url) {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => this.renderResults(data))
+      .catch((err) => {
+        console.error("Error fetching data:", err);
+        this.resultsContainer.innerHTML = `<p class="no-result">Failed to load results. Please try again later.</p>`;
+      });
   }
 }
 
-// Example popular searches array, can be removed or used elsewhere
-const popularSearches = ["carpenter","delivery man", "electrical maintenance", "lechonero", "water refilling", "tubero"];
+// Class to handle profile filtering
+class ProfileFilter {
+  constructor(educationFilterId, locationFilterId) {
+    this.educationFilter = document.getElementById(educationFilterId);
+    this.locationFilter = document.getElementById(locationFilterId);
+  }
 
-  function filterProfiles() {
-    const educationFilter = document.getElementById("education-filter").value;
-    const locationFilter = document.getElementById("location-filter").value;
+  // Filters profiles based on selected criteria
+  filterProfiles() {
+    const educationFilterValue = this.educationFilter.value;
+    const locationFilterValue = this.locationFilter.value;
     const profiles = document.querySelectorAll(".profile");
 
     profiles.forEach((profile) => {
       const education = profile.getAttribute("data-education");
       const location = profile.getAttribute("data-location");
 
-      const matchesEducation = educationFilter === "all" || education === educationFilter;
-      const matchesLocation = locationFilter === "all" || location === locationFilter;
+      const matchesEducation = educationFilterValue === "all" || education === educationFilterValue;
+      const matchesLocation = locationFilterValue === "all" || location === locationFilterValue;
 
       if (matchesEducation && matchesLocation) {
         profile.classList.add("visible");
@@ -327,12 +335,27 @@ const popularSearches = ["carpenter","delivery man", "electrical maintenance", "
       }
     });
   }
+}
 
-  document.getElementById("education-filter").addEventListener("change", filterProfiles);
-  document.getElementById("location-filter").addEventListener("change", filterProfiles);
+// Instantiate necessary objects
+const appletRenderer = new AppletRenderer("details");
+const searchHandler = new SearchHandler("search", "results");
+const profileFilter = new ProfileFilter("education-filter", "location-filter");
 
-  filterProfiles();
+// Fetch initial data for search results
+searchHandler.fetchSearchData("lechon.json");
+appletRenderer.fetchAppletData("water.json");
+
+// Event Listeners
+document.getElementById("search").addEventListener("keypress", (event) => searchHandler.handleSearch(event));
+document.getElementById("education-filter").addEventListener("change", () => profileFilter.filterProfiles());
+document.getElementById("location-filter").addEventListener("change", () => profileFilter.filterProfiles());
+
+// Initial filter call
+profileFilter.filterProfiles();
+
 });
+
 
     </script>
 
